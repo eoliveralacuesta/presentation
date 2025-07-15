@@ -1,0 +1,62 @@
+.eol-body {
+    color: #1c1c1c;
+    font-family: monospace;
+    margin: 0;
+    padding: 0;
+    background: url('img/background.svg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.eol-body img.portrait {
+    padding: 5px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.eol-body .container {
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.eol-body .container .container_bienvenida {
+    text-align: center;
+    display: inline-block;
+    width: 80%;
+    margin: 0;
+    position: relative;
+    top: 3vh;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: clamp(1.25rem, 2vw, 2rem);
+    font-weight: 400;
+    line-height: 1.5;
+    box-shadow: 0 4px 13px 0 #672905;
+    background: #ffca998a;
+    border-radius: 13px;
+    color: #672905;
+    padding: clamp(0.5em, 2vw, 1em);
+}
+
+.eol-body .container section.container_actions {
+    display: grid;
+    grid-template-rows: 15vh 15vh 15vh;
+    row-gap: 5vh;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    top: 10vh;
+}
+
+.eol-body .container section.container_actions button {
+    background-color: #cf5813;
+    min-width: 200px;
+    width: 25vw;
+    font-family: monospace;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 500;
+    border-radius: 7px;
+    border: 2px solid #672905;
+}
