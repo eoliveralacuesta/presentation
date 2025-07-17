@@ -1,0 +1,35 @@
+:root {
+	--pixel-font: 'Press Start 2P', monospace, sans-serif;
+	--main-color: #1c1c1c;
+	--text-color: #4d2908;
+	
+}
+
+@media (hover: none) and (pointer: coarse) {
+	.eol-body a,
+	.eol-body button,
+	.eol-body .pixel-pulse {
+		animation: pixel-pulse 2.5s infinite alternate;
+	}
+}
+
+@keyframes pixel-scale {
+	transform-origin: center center;	
+	from {
+		transform: scale(0.9);
+	}
+	to {
+		transform: scale(1.1);
+	}
+}
+
+@keyframes pixel-pulse {
+  from {
+    filter: brightness(1);
+    transform: scale(1);
+  }
+  to {
+    filter: brightness(1.1);
+    transform: scale(1.03);
+  }
+}

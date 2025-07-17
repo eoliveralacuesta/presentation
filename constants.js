@@ -11,9 +11,9 @@ const LANGUAGES = {
         Fan of great organization powered by coffee, how can I help you?`
       }
     },
-    { selector: '#about_me', attributes: { innerText: "About me" } },
-    { selector: '#portfolio', attributes: { innerText: "Portfolio" } },
-    { selector: '#contact', attributes: { innerText: "Contact me" } },
+    { selector: '#actions_info span', attributes: { innerText: "About me" } },
+    { selector: '#actions_portfolio span', attributes: { innerText: "Portfolio" } },
+    { selector: '#actions_contact span', attributes: { innerText: "Contact me" } },
     { selector: '.form_control[name="fullname"]', attributes: { placeholder: "Your name (optional)" } },
     { selector: '.form_control[name="email"]', attributes: { placeholder: "Your email" } },
     { selector: '.form_control[name="phone"]', attributes: { placeholder: "Your phone number" } },
@@ -28,13 +28,12 @@ const LANGUAGES = {
     {
       selector: '.container_welcome',
       attributes: {
-        innerHTML: `¡Hola! Soy Evelyn, desarrolladora de software y eterna autodidacta.<br>
-        Fanática de la buena organización mediante café, ¿cómo puedo ayudarte?`
+        innerHTML: `¡Hola! Soy Evelyn, desarrolladora de software; te invito a conocerme tanto personal como profesionalmente. <strong>Si tenés una necesidad, busquemos la solución.</strong>`
       }
     },
-    { selector: '#about_me', attributes: { innerText: "Conoceme" } },
-    { selector: '#portfolio', attributes: { innerText: "Portafolio" } },
-    { selector: '#contact', attributes: { innerText: "Escribime" } },
+    { selector: '#actions_info span', attributes: { innerText: "EXPERIENCIA" } },
+    { selector: '#actions_portfolio span', attributes: { innerText: "COLECCIÓN" } },
+    { selector: '#actions_contact span', attributes: { innerText: "MENSAJES" } },
     { selector: '.form_control[name="fullname"]', attributes: { placeholder: "Tu nombre (opcional)" } },
     { selector: '.form_control[name="email"]', attributes: { placeholder: "Tu correo electrónico" } },
     { selector: '.form_control[name="phone"]', attributes: { placeholder: "Tu número de contacto" } },

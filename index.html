@@ -9,6 +9,8 @@
 		<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
 		<link rel="manifest" href="img/favicon/site.webmanifest">
 
+		<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
 		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body class="eol-body loading">
@@ -16,56 +18,72 @@
 			 style="display: none"
 			 src="img/portrait.svg">
 
-		<img id="language_switcher" src="img/LANG_SWITCH.svg" onClick="showLanguage()">
-		<div id="language" style="display: none">
-			<img id="language--ES" src="img/ES.svg" onClick="setLanguage('ES')" />
-		
-			<img id="language--EN" src="img/EN.svg" onClick="setLanguage('EN')" />
-		</div>
-
-		<div id="main_container" class="container" style="display: none">
-			<h1 class="container_welcome"></h1>
-
-			<section id="actions" 
-					 class="container_section container_section-actions">
-				<img src="img/experiencia.svg" />
-				<img src="img/coleccion.svg" />
-				<img src="img/mensajes.svg" />
+		<!-- ESTE ELEMENTO MARCA SI HAY UNA SECCIÓN ACTIVA O NO (PUEDE SER DE IDIOMA TAMBIÉN) -->
+		<div class="sections-wrapper"> 
+			<section class="tools">
+				<img id="go_back" class="pixel-pulse" src="img/GO_BACK.png" onClick="goBack()">
+				<img id="language_switcher" src="img/LANG_SWITCH.png" onClick="showLanguage()">
 			</section>
+			
+			<div id="language">
+				<img id="language--ES" src="img/ES.svg" onClick="setLanguage('ES')" />
+			
+				<img id="language--EN" src="img/EN.svg" onClick="setLanguage('EN')" />
+			</div>
 
-			<!-- <section id="about_me" class="container_section container_section-info"> -->
+			<div class="container">
+				<h1 class="container_welcome"></h1>
 
-			<!-- </section> -->
+				<section id="actions" 
+						 class="container_section-actions">
+					<button id="actions_info" onClick="openSection('about_me')">
+						<img src="img/button.svg" />
+						<span></span>
+					</button>
+					<button id="actions_portfolio" onClick="openSection('portfolio')">
+						<img src="img/button.svg" />
+						<span></span>
+					</button>
+					<button id="actions_contact" onClick="openSection('contact')">
+						<img src="img/button.svg" />
+						<span></span>
+					</button>
+				</section>
 
-			<!-- <section id="portfolio" class="container_section container_section-portfolio"> -->
+				<section id="about_me" class="container_section container_section-info">
 
-			<!-- </section> -->
+				</section>
 
-			<!-- <section id="contact" class="container_section container_section-form"> -->
-				<!-- <form class="form" -->
-					  <!-- name="contact" -->
-					  <!-- onsubmit="onSubmit(this)"> -->
-					<!-- <input class="form_control"  -->
-						   <!-- name="fullname"  -->
-						   <!-- type="name" /> -->
-						   
-					<!-- <input class="form_control"  -->
-						   <!-- name="email"  -->
-						   <!-- type="email" /> -->
-						   
-					<!-- <input class="form_control"  -->
-						   <!-- name="phone"  -->
-						   <!-- type="phone" /> -->
-						   
-					<!-- <textarea class="form_control form_control-textarea"  -->
-							  <!-- name="message"> -->
-					<!-- </textarea> -->
-					
-					<!-- <button type="submit" -->
-							<!-- class="form_button"></button> -->
-				<!-- </form> -->
-			<!-- </section> -->
+				<section id="portfolio" class="container_section container_section-portfolio">
 
+				</section>
+
+				<section id="contact" class="container_section container_section-form">
+					<form class="form"
+						  name="contact"
+						  onsubmit="onSubmit(this)">
+						<input class="form_control" 
+							   name="fullname" 
+							   type="name" />
+							   
+						<input class="form_control" 
+							   name="email" 
+							   type="email" />
+							   
+						<input class="form_control" 
+							   name="phone" 
+							   type="phone" />
+							   
+						<textarea class="form_control form_control-textarea" 
+								  name="message">
+						</textarea>
+						
+						<button type="submit"
+								class="form_button"></button>
+					</form>
+				</section>
+
+			</div>
 		</div>
 
 		<script src="constants.js"></script>

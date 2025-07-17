@@ -35,42 +35,47 @@ document.addEventListener('DOMContentLoaded', function() {
 	//Mismo funcionamiento que con el fondo, pero por asincronía uno u otro pueden terminar primero 
 	//Ahí la cuestión de usar un contador simple, también se pueden usar 2 flags; en este caso como es una web simple no hace gran diferencia
 	portraitElement = document.getElementById('portrait');
-	portraitElement.onload = () => {
+	
+	let completedPortrait = () => {
 		//Acá ya se cargó la imagen del retrato, así que marco una imagen cargada más
 		loadedImages++;
 		//Le agrego el estilo para que sea visible
 		portraitElement.style.display = 'block';
 		
 		onLoadedImage();
-	};
+	}
+	
+	if(portraitElement.complete)
+		completedPortrait();
+	else {
+		portraitElement.onload = () => {
+			completedPortrait();
+		};
+	}
 });
 
 function showLanguage(recommended) {
 	if(!recommended)
 		recommended = LANGUAGE;
 	
-	document.getElementById('main_container').style.display = 'none';
-	document.getElementById('language_switcher').style.display = 'none';
+	let el = document.querySelector('.sections-wrapper');
+	el.classList.add('sections-wrapper--lang');
 	
-	document.getElementById('language').style.display = 'grid';
-	
-	let el = document.getElementById('language--' + recommended); 
-	
+	//Recomiendo el idioma del navegador dándole una animación por 3 segundos
+	el = document.getElementById('language--' + recommended); 
 	if (el)
 	{
 		el.classList.add('language--recommended');
 		
 		setTimeout(() => {
 			el.classList.remove('language--recommended');
-		}, 5000);
+		}, 3000);
 	}
 }
 
 function setLanguage(language){
-	document.getElementById('language_switcher').style.display = 'block';
-	document.getElementById('language').style.display = 'none';
-	
-	document.getElementById('main_container').style.display = 'block';
+	let el = document.querySelector('.sections-wrapper');
+	el.classList.remove('sections-wrapper--lang');
 	
 	//Si no cambió el lenguaje no tiene sentido realizar el reemplazo
 	if(LANGUAGE != language) { 
@@ -99,18 +104,12 @@ function setLanguage(language){
 			}
 		});
 	}
-	
-	
 
 	//Acá comienzo la animación ya con los textos cargados, vuelvo a la introducción para que tenga sentido todo el flujo de animación
-	portraitElement.classList.remove('portrait--small');
-	if (actualSectionElement)
-		actualSectionElement.classList.remove('container_section--active');
-	
-	animateIntro();
+	goBack();
 }
 
-//Recibe un elemento, la cadena a animar y la velocidad (en ms)
+//Recibe un elemento, la cadena a animar y la velocidad (en ms), callback opcional para avisar la finalización de la animación
 function animateAsTypewriter(element, html, speed = 30, callback = null) {
     element.innerHTML = "";
     let i = 0;
@@ -138,37 +137,52 @@ function animateAsTypewriter(element, html, speed = 30, callback = null) {
     typeChar();
 }
 
-var actions;
+function goBack(){
+	//Agrando el retrato para que se vuelva a animar el texto de introducción
+	portraitElement.classList.remove('portrait--small');
+	
+	//Acá debería tener marcado el contenedor (.container) con una clase --open y de ahí para abajo ya solo trabajar en display block o none desde css para no calentarme haciendo elemento por elemento; el único elemento que sí voy a dejar por js es el de goback
+	let wrapperEl = document.querySelector('.sections-wrapper');
+	wrapperEl.classList.remove('sections-wrapper--open');
+	
+	//Si hay una sección existente, entonces le removemos la clase activa para que deje de mostrarse
+	let actualSectionElement = document.querySelector('.container_section.container_section--active');
+	if (actualSectionElement)
+		actualSectionElement.classList.remove('container_section--active');
+	
+	animateIntro();
+}
+
 function animateIntro() {
 	//Selecciona el elemento de bienvenida (o introducción) y su contenido
 	let el = document.querySelector('.container_welcome');
     let content = el.innerHTML;
 
+	//Esconde todo para realizar la animación
+	let wrapperEl = document.querySelector('.sections-wrapper');
+	wrapperEl.classList.add('sections-wrapper--animation');
+
     //Llamamos a la función que escribe caracter a caracter
     animateAsTypewriter(el, content, 18, () => {
         //Ahora se deben mostrar los botones de acción para iniciar la interacción del usuario con la web 
-		actions = document.querySelector('#actions');
-		if(actions) 
-			actions.classList.add('container_section--active');
+		wrapperEl.classList.remove('sections-wrapper--animation');
+		
+		//También achicamos el retrato para que ya no sea tan principal
+		portraitElement.classList.add('portrait--small');
     });
 }
 
-//Variable para guardar la sección actual de la interacción, inicia sin nada para mostrar los botones
-var actualSectionElement;
-function onSectionChange(el) {
-	if(!actions.hasClass('container_section--navbar'))
-		actions.classList.add('container_section--navbar');
+//Se abre una sección, marcando el wrapper con una clase para poder esconder y mostrar datos según la necesidad
+function openSection(elementId) {
+	let wrapperEl = document.querySelector('.sections-wrapper');
+	wrapperEl.classList.add('sections-wrapper--open');
 	
-	//Si hay una sección existente, entonces le removemos la clase activa para que deje de mostrarse
-	if(actualSectionElement)
-		actualSectionElement.classList.remove('container_section--active');
-	else //Sino ponemos el retrato como algo secundario, haciéndolo más pequeño y dando lugar al contenido de la sección
-		portraitElement.classList.add('portrait--small');
-	
-	//Ahora buscamos el elemento para ponerle clase activa y actualizamos la variable de la sección actual
-	el.addClass('container_section--active');
-	actualSectionElement = el;
+	//Ahora le ponemos la clase activa a la sección para mostrarla
+	let el = document.getElementById(elementId);
+	if (el)
+		el.addClass('container_section--active');
 }
+
 
 function onSubmit(form){
 	//Revisar los campos, obligatorio es solo el mensaje y email o teléfono (si hay uno de los dos ya es válido)
