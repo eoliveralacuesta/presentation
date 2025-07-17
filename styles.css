@@ -5,6 +5,7 @@
     font-family: monospace, sans-serif;
     margin: 0;
     padding: 0;
+	font-size: 13px; 
 }
 
 .eol-body.loaded {
@@ -38,7 +39,7 @@
 .eol-body .sections-wrapper .tools img#go_back,
 .eol-body .sections-wrapper .tools img#language_switcher {
 	position: relative;
-    width: clamp(200px, 15vw, 350px);
+    width: clamp(100px, 15vw, 150px);
 	display: inline-block;
 	transition: opacity .5s ease-in-out;
 }
@@ -100,14 +101,14 @@
     top: 3vh;
     left: 50%;
     transform: translateX(-50%);
-    font-size: clamp(2rem, 4vw, 4rem);
+    font-size: clamp(1rem, 4vw, 2rem);
     font-weight: 400;
     line-height: 1.5;
     box-shadow: 0 4px 13px 0 #672905;
     background: #ffca998a;
     border-radius: 13px;
     color: #672905;
-    padding: clamp(2rem, 5vw, 2.5rem);
+    padding: clamp(1rem, 5vw, 1.5rem);
 }
 
 .eol-body .sections-wrapper .container .container_section {
@@ -134,9 +135,8 @@
 }
 
 .eol-body .sections-wrapper .container section.container_section-actions button {
-    width: clamp(200px, 70vw, 80%);
-    min-height: 75px;
-    height: 10vh;
+	width: clamp(450px, 25vw, 80%);
+    height: clamp(80px, 25vh, 250px);
     border: none;
     outline: none;
     box-shadow: none;
