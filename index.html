@@ -1,49 +1,74 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8" />
-    <title>Evelyn Olivera SAS</title>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Evelyn Olivera SAS</title>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="img/favicon/site.webmanifest">
+		<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+		<link rel="manifest" href="img/favicon/site.webmanifest">
 
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body class="eol-body">
-    <img id="eol-portrait" 
-         src="img/portrait.svg" 
-         alt="Retrato animado de Evelyn, con su setup de fondo." 
-         class="portrait">
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body class="eol-body loading">
+		<img id="portrait"
+			 style="display: none"
+			 src="img/portrait.svg">
 
-    <div class="container">
-        <h1 class="container_bienvenida">
-            ¡Hola! Soy Evelyn, desarrolladora de software y eterna autodidacta.
-            <br>
-            Fanática de la buena organización mediante café, <strong>¿cómo puedo ayudarte?</strong>
-        </h1>
+		<img id="language_switcher" src="img/LANG_SWITCH.svg" onClick="showLanguage()">
+		<div id="language" style="display: none">
+			<img id="language--ES" src="img/ES.svg" onClick="setLanguage('ES')" />
+		
+			<img id="language--EN" src="img/EN.svg" onClick="setLanguage('EN')" />
+		</div>
 
-        <section id="actions" class="container_actions">
-            <button type="button" id="conoceme" href="#conoceme">Conoceme</button>
-            <button type="button" id="portafolio" href="#portafolio">Portafolio</button>
-            <button type="button" id="escribime" href="#escribime">Escribime</button>
-        </section>
+		<div id="main_container" class="container" style="display: none">
+			<h1 class="container_welcome"></h1>
 
-        <section id="conoceme" class="container_conoceme">
+			<section id="actions" 
+					 class="container_section container_section-actions">
+				<img src="img/experiencia.svg" />
+				<img src="img/coleccion.svg" />
+				<img src="img/mensajes.svg" />
+			</section>
 
-        </section>
+			<!-- <section id="about_me" class="container_section container_section-info"> -->
 
-        <section id="portafolio" class="container_portafolio">
+			<!-- </section> -->
 
-        </section>
+			<!-- <section id="portfolio" class="container_section container_section-portfolio"> -->
 
-        <section id="escribime" class="container_escribime">
+			<!-- </section> -->
 
-        </section>
+			<!-- <section id="contact" class="container_section container_section-form"> -->
+				<!-- <form class="form" -->
+					  <!-- name="contact" -->
+					  <!-- onsubmit="onSubmit(this)"> -->
+					<!-- <input class="form_control"  -->
+						   <!-- name="fullname"  -->
+						   <!-- type="name" /> -->
+						   
+					<!-- <input class="form_control"  -->
+						   <!-- name="email"  -->
+						   <!-- type="email" /> -->
+						   
+					<!-- <input class="form_control"  -->
+						   <!-- name="phone"  -->
+						   <!-- type="phone" /> -->
+						   
+					<!-- <textarea class="form_control form_control-textarea"  -->
+							  <!-- name="message"> -->
+					<!-- </textarea> -->
+					
+					<!-- <button type="submit" -->
+							<!-- class="form_button"></button> -->
+				<!-- </form> -->
+			<!-- </section> -->
 
-    </div>
+		</div>
 
-    <script src="script.js"></script>
-</body>
+		<script src="constants.js"></script>
+		<script src="script.js"></script>
+	</body>
 </html>

@@ -3,24 +3,74 @@
     font-family: monospace;
     margin: 0;
     padding: 0;
-    background: url('img/background.svg') no-repeat center center fixed;
+}
+
+.eol-body.loaded {
+	background: url('img/background.svg') no-repeat center center fixed;
     background-size: cover;
 }
 
-.eol-body img.portrait {
-    padding: 5px;
-    width: 100%;
+.eol-body img#language_switcher {
+	width: 150px;
     position: fixed;
-    bottom: 0;
-    left: 0;
+    top: 0;
+	right: 0;
+}
+
+.eol-body div#language {
+	width: max-content;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 10vw;
+	display: grid;
+    grid-template-columns: 25vw 25vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.eol-body div#language img {
+	max-width: 20vw;
+}
+.eol-body a:hover,
+.eol-body button:hover,
+.eol-body img[id^=language]:hover,
+.eol-body div#language img[class*=recommended],
+.eol-body .container section.container_section-actions img:hover {
+	animation: btn-hovering .5s infinite alternate;
+}
+
+@keyframes btn-hovering {
+	transform-origin: center center;	
+	from {
+		transform: scale(0.9);
+	}
+	to {
+		transform: scale(1.1);
+	}
+	
+}
+
+.eol-body img#portrait {
+	position: fixed;
+    bottom: -15px;
+    left: -15px;
+    max-height: 75vh;
+    min-height: 50vh;
+	transition: transform .5s cubic-bezier(.68, -0.55, .27, 1.55);
+}
+
+.eol-body img#portrait.portrait--small {
+	transform: scale(0.7);
+    transform-origin: left bottom;
 }
 
 .eol-body .container {
-    min-width: 100vw;
-    min-height: 100vh;
+    min-width: 100%;
+    min-height: 100%;
 }
 
-.eol-body .container .container_bienvenida {
+.eol-body .container .container_welcome {
     text-align: center;
     display: inline-block;
     width: 80%;
@@ -39,7 +89,16 @@
     padding: clamp(0.5em, 2vw, 1em);
 }
 
-.eol-body .container section.container_actions {
+.eol-body .container .container_section {
+	opacity: 0;
+	transition: opacity .5s ease-in-out;
+}
+
+.eol-body .container .container_section.container_section--active {
+	opacity: 1;
+}
+
+.eol-body .container section.container_section-actions {
     display: grid;
     grid-template-rows: 15vh 15vh 15vh;
     row-gap: 5vh;
@@ -50,7 +109,12 @@
     top: 10vh;
 }
 
-.eol-body .container section.container_actions button {
+.eol-body .container section.container_section-actions img {
+    height: 100%;
+    width: 100%;
+}
+
+.eol-body .container section.container_section-actions a {
     background-color: #cf5813;
     min-width: 200px;
     width: 25vw;
@@ -59,4 +123,6 @@
     font-weight: 500;
     border-radius: 7px;
     border: 2px solid #672905;
+	text-decoration: none;
 }
+
