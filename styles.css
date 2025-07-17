@@ -136,7 +136,7 @@
 
 .eol-body .sections-wrapper .container section.container_section-actions button {
 	width: clamp(450px, 25vw, 80%);
-    height: clamp(80px, 25vh, 250px);
+    height: clamp(80px, 25vh, 175px);
     border: none;
     outline: none;
     box-shadow: none;
@@ -160,6 +160,6 @@
 
 .eol-body .sections-wrapper .container section.container_section-actions button span {
 	font-family: var(--pixel-font);
-	font-size: clamp(35px, 4vw, 45px);
+	font-size: clamp(1rem, 3vw, 2rem);
 	color: var(--text-color);
 }
