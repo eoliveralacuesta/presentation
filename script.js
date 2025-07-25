@@ -39,8 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	let completedPortrait = () => {
 		//Acá ya se cargó la imagen del retrato, así que marco una imagen cargada más
 		loadedImages++;
-		//Le agrego el estilo para que sea visible
-		portraitElement.style.display = 'block';
 		
 		onLoadedImage();
 	}
@@ -164,11 +162,13 @@ function animateIntro() {
 
     //Llamamos a la función que escribe caracter a caracter
     animateAsTypewriter(el, content, 18, () => {
-        //Ahora se deben mostrar los botones de acción para iniciar la interacción del usuario con la web 
-		wrapperEl.classList.remove('sections-wrapper--animation');
-		
-		//También achicamos el retrato para que ya no sea tan principal
-		portraitElement.classList.add('portrait--small');
+        setTimeout(() => {
+			//Ahora se deben mostrar los botones de acción para iniciar la interacción del usuario con la web 
+			wrapperEl.classList.remove('sections-wrapper--animation');
+			
+			//También achicamos el retrato para que ya no sea tan principal
+			portraitElement.classList.add('portrait--small');
+		}, 500); //Le damos tiempo a la animación de typewriter para que se note más		
     });
 }
 
@@ -180,7 +180,7 @@ function openSection(elementId) {
 	//Ahora le ponemos la clase activa a la sección para mostrarla
 	let el = document.getElementById(elementId);
 	if (el)
-		el.addClass('container_section--active');
+		el.classList.add('container_section--active');
 }
 
 
