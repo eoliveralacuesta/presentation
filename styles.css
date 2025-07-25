@@ -8,20 +8,41 @@
 	font-size: 13px; 
 }
 
-.eol-body.loaded {
+.eol-body .wrapper {
+	background-color: #5b5046;
+    opacity: .6;
+	transition: opacity .3 ease-in-out;
+}
+
+.eol-body.loaded .wrapper {
+	opacity: 1;
 	background: url('img/background.svg') no-repeat center center fixed;
-    background-size: cover;
+	background-size: cover;
+	padding: 5px 15px;
+	height: 100%;
+	height: -webkit-fill-available;
+	position: relative;
+	height: calc(100vh - 10px);
+	overflow: hidden;
+}
+
+.eol-body .mobile-wrapper {
+	max-width: 350px;
+	min-width: 250px;
+	margin: auto;
+	font-size: 13px;
+	position: relative;
 }
 
 .eol-body img#portrait {
 	position: fixed;
-    bottom: -30px;
-    left: -30px;
+	bottom: -5px;
+	left: -5px;
 	max-width: 100%;
-    max-height: 75vh;
-    min-height: 50vh;
-    transition: transform 1s cubic-bezier(.68, -0.55, .27, 1.55);
-	z-index: -2;
+	max-height: 75vh;
+	min-height: 50vh;
+	transition: transform 1s cubic-bezier(.68, -0.55, .27, 1.55);
+	z-index: 10;
 }
 
 .eol-body img#portrait.portrait--small {
@@ -32,14 +53,18 @@
 .eol-body .sections-wrapper .tools {
 	padding: 15px;
 	display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.eol-body .sections-wrapper.sections-wrapper--lang .tools {
+	display: none;
 }
 
 .eol-body .sections-wrapper .tools img#go_back,
 .eol-body .sections-wrapper .tools img#language_switcher {
 	position: relative;
-    width: clamp(100px, 15vw, 150px);
+	width: clamp(75px, 15vw, 150px);
 	display: inline-block;
 	transition: opacity .5s ease-in-out;
 }
@@ -48,6 +73,7 @@
 .eol-body .sections-wrapper.sections-wrapper--lang img#language_switcher,
 .eol-body .sections-wrapper.sections-wrapper--animation  img#language_switcher {
 	opacity: 0;
+	display: none;
 }
 
 .eol-body .sections-wrapper.sections-wrapper--open .tools img#go_back {
@@ -64,12 +90,12 @@
 }
 
 .eol-body .sections-wrapper div#language {
-	min-width: 100%;
-    min-height: 100%;
-    display: none;
-    justify-content: center;
-    grid-template-columns: clamp(450px, 25vw, 80%);
-    position: relative;
+	width: 100%;
+	display: none;
+	top: clamp(15px, 2vh, 25px);
+	justify-content: center;
+	grid-template-columns: clamp(100px, 50vw, 200px);
+	position: relative;
 }
 .eol-body .sections-wrapper div#language img {
 	position: relative;
@@ -85,7 +111,7 @@
 
 .eol-body .sections-wrapper .container {
 	position: relative;
-	/* top: clamp(30px, 5vh, 100px); */
+	top: 0;
 	width: 80%;
 	height: 100%;
 	margin: auto;
@@ -97,10 +123,9 @@
     width: 100%;
     margin: 0;
     position: relative;
-    top: 3vh;
     left: 50%;
     transform: translateX(-50%);
-    font-size: clamp(1rem, 4vw, 2rem);
+    font-size: clamp(1rem, 16px, 2rem);
     font-weight: 400;
     line-height: 1.5;
     box-shadow: 0 4px 13px 0 #672905;
@@ -134,8 +159,8 @@
 }
 
 .eol-body .sections-wrapper .container section.container_section-actions button {
-	width: clamp(350px, 20vw, 80%);
 	height: clamp(75px, 20vh, 175px);
+    aspect-ratio: 3 / 1;
 	border: none;
 	outline: none;
 	box-shadow: none;
@@ -154,11 +179,12 @@
     left: 0;
     image-rendering: pixelated;
     pointer-events: none;
-    z-index: -1;
+    z-index: 20;
 }
 
 .eol-body .sections-wrapper .container section.container_section-actions button span {
 	font-family: var(--pixel-font);
 	font-size: 1.5rem;
 	color: var(--text-color);
+	z-index: 21;
 }

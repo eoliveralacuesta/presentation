@@ -2,6 +2,8 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 		<title>Evelyn Olivera SAS</title>
 
 		<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
@@ -14,76 +16,79 @@
 		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body class="eol-body loading">
-		<img id="portrait"
-			 style="display: none"
-			 src="img/portrait.svg">
+		<div class="wrapper">
+			<img id="portrait"
+				 style="display: none"
+				 src="img/portrait.svg">
 
-		<!-- ESTE ELEMENTO MARCA SI HAY UNA SECCIÓN ACTIVA O NO (PUEDE SER DE IDIOMA TAMBIÉN) -->
-		<div class="sections-wrapper"> 
-			<section class="tools">
-				<img id="go_back" class="pixel-pulse" src="img/GO_BACK.png" onClick="goBack()">
-				<img id="language_switcher" src="img/LANG_SWITCH.png" onClick="showLanguage()">
-			</section>
-			
-			<div id="language">
-				<img id="language--ES" src="img/ES.svg" onClick="setLanguage('ES')" />
-			
-				<img id="language--EN" src="img/EN.svg" onClick="setLanguage('EN')" />
+			<!-- ESTE ELEMENTO MARCA SI HAY UNA SECCIÓN ACTIVA O NO (PUEDE SER DE IDIOMA TAMBIÉN) -->
+			<div class="sections-wrapper"> 
+				<section class="tools">
+					<img id="go_back" class="pixel-pulse" src="img/GO_BACK.png" onClick="goBack()">
+					<img id="language_switcher" src="img/LANG_SWITCH.png" onClick="showLanguage()">
+				</section>
+				
+				<div id="language">
+					<img id="language--ES" src="img/ES.svg" onClick="setLanguage('ES')" />
+				
+					<img id="language--EN" src="img/EN.svg" onClick="setLanguage('EN')" />
+				</div>
+
+				<div class="container">
+					<h1 class="container_welcome"></h1>
+
+					<section id="actions" 
+							 class="container_section-actions">
+						<button id="actions_info" onClick="openSection('about_me')">
+							<img src="img/button.svg" />
+							<span></span>
+						</button>
+						<button id="actions_portfolio" onClick="openSection('portfolio')">
+							<img src="img/button.svg" />
+							<span></span>
+						</button>
+						<button id="actions_contact" onClick="openSection('contact')">
+							<img src="img/button.svg" />
+							<span></span>
+						</button>
+					</section>
+
+					<section id="about_me" class="container_section container_section-info">
+
+					</section>
+
+					<section id="portfolio" class="container_section container_section-portfolio">
+
+					</section>
+
+					<section id="contact" class="container_section container_section-form">
+						<form class="form"
+							  name="contact"
+							  onsubmit="onSubmit(this)">
+							<input class="form_control" 
+								   name="fullname" 
+								   type="name" />
+								   
+							<input class="form_control" 
+								   name="email" 
+								   type="email" />
+								   
+							<input class="form_control" 
+								   name="phone" 
+								   type="phone" />
+								   
+							<textarea class="form_control form_control-textarea" 
+									  name="message">
+							</textarea>
+							
+							<button type="submit"
+									class="form_button"></button>
+						</form>
+					</section>
+
+				</div>
 			</div>
-
-			<div class="container">
-				<h1 class="container_welcome"></h1>
-
-				<section id="actions" 
-						 class="container_section-actions">
-					<button id="actions_info" onClick="openSection('about_me')">
-						<img src="img/button.svg" />
-						<span></span>
-					</button>
-					<button id="actions_portfolio" onClick="openSection('portfolio')">
-						<img src="img/button.svg" />
-						<span></span>
-					</button>
-					<button id="actions_contact" onClick="openSection('contact')">
-						<img src="img/button.svg" />
-						<span></span>
-					</button>
-				</section>
-
-				<section id="about_me" class="container_section container_section-info">
-
-				</section>
-
-				<section id="portfolio" class="container_section container_section-portfolio">
-
-				</section>
-
-				<section id="contact" class="container_section container_section-form">
-					<form class="form"
-						  name="contact"
-						  onsubmit="onSubmit(this)">
-						<input class="form_control" 
-							   name="fullname" 
-							   type="name" />
-							   
-						<input class="form_control" 
-							   name="email" 
-							   type="email" />
-							   
-						<input class="form_control" 
-							   name="phone" 
-							   type="phone" />
-							   
-						<textarea class="form_control form_control-textarea" 
-								  name="message">
-						</textarea>
-						
-						<button type="submit"
-								class="form_button"></button>
-					</form>
-				</section>
-
-			</div>
+		</div>
 		</div>
 
 		<script src="constants.js"></script>
