@@ -1,4 +1,6 @@
-@import url('./common.css');
+@import url('./modules/common.css');
+@import url('./modules/form.css');
+
 
 .eol-body {
     color: var(--main-color);
@@ -24,7 +26,7 @@
 
 .eol-body.loaded .wrapper {
 	opacity: 1;
-	background: url('img/background.svg') no-repeat center center fixed;
+	background: url('../img/background.svg') no-repeat center center fixed;
 	background-size: cover;
 	position: relative;
 	height: 100vh;
@@ -119,7 +121,7 @@
 
 .eol-body .sections-wrapper .container {
 	position: relative;
-	top: clamp(15px, 5vw, 20px);
+	top: clamp(15px, 5vw, 30px);
 	width: 100%;
 	height: 100%;
 	margin: auto;
@@ -142,15 +144,15 @@
 }
 
 .eol-body .sections-wrapper.sections-wrapper--animation .container .container_welcome {
-	font-size: clamp(13px, 4vw, 16px);
+	font-size: clamp(13px, 4vw, 20px);
     padding: clamp(10px, 5vw, 15px);
     width: 80%;
 }
 
 .eol-body .sections-wrapper .container .container_welcome {
-	font-size: clamp(9px, 2vw, 12px);
+	font-size: clamp(12px, 4vw, 30px);
 	padding: clamp(5px, 15vw, 10px);
-	width: 90%;
+	width: calc(100% - 30px);
 }
 
 .eol-body .sections-wrapper .container .container_section {
@@ -168,6 +170,7 @@
     background-color: rgb(103 41 5 / 50%);
     box-shadow: 0px 4px 12px 3px black;
     border: 1px solid rgb(0 0 0 / 50%);
+	padding: 10px;
 }
 
 .eol-body .sections-wrapper .container section.container_section-actions {
@@ -196,13 +199,13 @@
     align-items: center;
     justify-content: center;
     image-rendering: pixelated;
-    background-image: url(img/button.svg);
+    background-image: url('../img/button.svg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     background-color: transparent;
     font-family: var(--pixel-font);
-    font-size: clamp(11px, 4vw, 12px);
+    font-size: clamp(11px, 5vw, 18px);
     color: var(--text-color);
     z-index: 10;
 }

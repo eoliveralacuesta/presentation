@@ -13,7 +13,7 @@
 
 		<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
-		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="./styles/main.css">
 	</head>
 	<body class="eol-body loading">
 		<div class="wrapper">
@@ -62,23 +62,33 @@
 							  name="contact"
 							  onsubmit="onSubmit(this)">
 							<input class="form_control" 
-								   name="fullname" 
-								   type="name" />
+								   name="name" 
+								   autocomplete="on"
+								   type="text" />
 								   
 							<input class="form_control" 
 								   name="email" 
+								   autocomplete="on"
 								   type="email" />
 								   
 							<input class="form_control" 
 								   name="phone" 
+								   autocomplete="on"
 								   type="phone" />
 								   
 							<textarea class="form_control form_control-textarea" 
-									  name="message">
+									  name="message"
+									  autocomplete="off">
 							</textarea>
 							
-							<button type="submit"
-									class="form_button"></button>
+							<div class="form_button">
+								<button type="submit"
+										class="form_button__submit"></button>
+								
+								<button type="button"
+										class="form_button__wpp"
+										onclick="window.open('https://wa.me/59897688678')" target="_blank"></button>
+							</div>
 						</form>
 					</section>
 

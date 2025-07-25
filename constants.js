@@ -14,11 +14,12 @@ const LANGUAGES = {
     { selector: '#actions_info', attributes: { innerText: "About me" } },
     { selector: '#actions_portfolio', attributes: { innerText: "Portfolio" } },
     { selector: '#actions_contact', attributes: { innerText: "Contact me" } },
-    { selector: '.form_control[name="fullname"]', attributes: { placeholder: "Your name (optional)" } },
+    { selector: '.form_control[name="name"]', attributes: { placeholder: "Your name (optional)" } },
     { selector: '.form_control[name="email"]', attributes: { placeholder: "Your email" } },
     { selector: '.form_control[name="phone"]', attributes: { placeholder: "Your phone number" } },
     { selector: '.form_control[name="message"]', attributes: { placeholder: "Hello! I need..." } },
-    { selector: '.form_button', attributes: { innerText: "Send message" } }
+    { selector: '.form_button .form_button__wpp', attributes: { innerText: "Send message" } },
+	{ selector: '.form_button .form_button__wpp', attributes: { innerText: "I'd rather use WhatsApp" } }
   ],
   ES: [
     {
@@ -34,10 +35,11 @@ const LANGUAGES = {
     { selector: '#actions_info', attributes: { innerText: "EXPERIENCIA" } },
     { selector: '#actions_portfolio', attributes: { innerText: "COLECCIÓN" } },
     { selector: '#actions_contact', attributes: { innerText: "MENSAJES" } },
-    { selector: '.form_control[name="fullname"]', attributes: { placeholder: "Tu nombre (opcional)" } },
+    { selector: '.form_control[name="name"]', attributes: { placeholder: "Tu nombre (opcional)" } },
     { selector: '.form_control[name="email"]', attributes: { placeholder: "Tu correo electrónico" } },
     { selector: '.form_control[name="phone"]', attributes: { placeholder: "Tu número de contacto" } },
     { selector: '.form_control[name="message"]', attributes: { placeholder: "¡Hola! Necesito..." } },
-    { selector: '.form_button', attributes: { innerText: "Enviar mensaje" } }
+    { selector: '.form_button .form_button__submit', attributes: { innerText: "Enviar mensaje" } },
+	{ selector: '.form_button .form_button__wpp', attributes: { innerText: "Prefiero WhatsApp" } }
   ]
 };
