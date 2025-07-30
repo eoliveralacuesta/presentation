@@ -1,5 +1,6 @@
 :root {
 	--pixel-font: 'Press Start 2P', monospace, sans-serif;
+	--text-font: monospace, sans-serif;
 	--main-color: #1c1c1c;
 	--text-color: #4d2908;
 	--brown-color: #672905;

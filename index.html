@@ -38,7 +38,7 @@
 
 					<section id="actions" 
 							 class="container_section-actions">
-						<button id="actions_info" onClick="openSection('about_me')">
+						<button id="actions_info" onClick="openSection('experience')">
 							
 						</button>
 						<button id="actions_portfolio" onClick="openSection('portfolio')">
@@ -49,27 +49,57 @@
 						</button>
 					</section>
 
-					<section id="about_me" class="container_section container_section-info">
-
+					<section id="experience" class="container_section container_section-info">
+						 <ol class="timeline">
+							<li>
+								<time datetime="2023">05/2023 – actual</time>
+								<h3>LUMBRA</h3>
+								<h4>Coordinadora de <i>marketing</i> digital</h4>
+								<p>Diseño de materiales gráficos, fotografía y edición para productos artesanales. Gestión de redes sociales y contenido visual en plataformas digitales. Vinculación de canales de venta y comunicación.</p>
+							</li>
+							
+							<li>
+								<time datetime="2023">02/2023 – 06/2025</time>
+								<h3>ZUREO SOFTWARE</h3>
+								<h4>Desarrolladora <i>full-stack</i></h4>
+								<p>Desarrollo de aplicaciones web y servicios API REST a demanda.<br><br>Supervisión de miembros trainee para los equipos de desarrollo y trabajo a la par con sector UX/UI.</p>
+							</li>
+							
+							<li>
+								<time datetime="2023">02/2023 – actual</time>
+								<h3><i>FREELANCER</i></h3>
+								<h4>Desarrolladora de <i>software</i></h4>
+								<p>Desarrollo de aplicaciones web, servicios API REST e integraciones con plataformas e-commerce para diferentes empresas.<br><br>Uso de Jira, Slack, GitHub, GitLab, NopCommerce. Conocimiento y desarrollos realizados utilizando Node.js, Angular 12, Angular 14, ReactJS, MySQL y diversas librerías.</p>
+							</li>
+							
+							<li>
+								<time datetime="2020">01/2020 – 10/2022</time>
+								<h3>ZUREO SOFTWARE</h3>
+								<h4>Desarrolladora <i>full-stack</i></h4>
+								<p>Desarrollo de aplicaciones web, servicios API REST e integraciones con plataformas e-commerce, trabajo conjunto con áreas UX/UI y QA.<br><br>Supervisión de miembros trainee para los equipos de QA y desarrollo. Organización y asignación de tareas, revisión de código y resultados finales.<br<br>>Uso de AzureDevOps, AngularJS, Angular 8, C#, .NET Framework, MongoDB, TSQL.</p>
+							</li>
+						</ol>
 					</section>
 
 					<section id="portfolio" class="container_section container_section-portfolio">
-
+					
 					</section>
 
 					<section id="contact" class="container_section container_section-form">
 						<form class="form"
 							  name="contact"
-							  onsubmit="onSubmit(this)">
+							  onsubmit="onSubmit(event, this)">
 							<input class="form_control" 
 								   name="name" 
 								   autocomplete="on"
-								   type="text" />
+								   type="text"
+								   required />
 								   
 							<input class="form_control" 
 								   name="email" 
 								   autocomplete="on"
-								   type="email" />
+								   type="email"
+								   required />
 								   
 							<input class="form_control" 
 								   name="phone" 
@@ -78,7 +108,8 @@
 								   
 							<textarea class="form_control form_control-textarea" 
 									  name="message"
-									  autocomplete="off">
+									  autocomplete="off"
+									  required>
 							</textarea>
 							
 							<div class="form_button">
@@ -98,6 +129,19 @@
 		</div>
 
 		<script src="constants.js"></script>
+		
+		<!-- <script src="https://cdn.emailjs.com/dist/email.min.js"></script> -->
+		<script type="text/javascript"
+				src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+		</script>
+		<script type="text/javascript">
+		   (function(){
+			  emailjs.init({
+				publicKey: "s2f5vdtJYhdAohf2P",
+			  });
+		   })();
+		</script>		
+		
 		<script src="script.js"></script>
 	</body>
 </html>

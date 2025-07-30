@@ -1,0 +1,56 @@
+.eol-body .sections-wrapper .container section.container_section.container_section-info .timeline {
+  position: relative;
+  list-style: none;
+  padding-left: 20px;
+  border-left: 4px solid var(--brown-color);
+  margin-left: 10px;
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section-info .timeline li {
+  position: relative;
+  margin-bottom: 20px;
+  color: var(--text-color);
+  background-color: var(--lightbrown-color);
+  border: 2px solid var(--brown-color);
+  box-shadow: 2px 2px 0 var(--brown-color);
+  padding: 10px;
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section-info .timeline li time {
+  font-family: var(--text-font);
+  font-size: 15px;
+  font-weight: 600;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section-info .timeline li h3 {
+  margin: 0;
+  font-family: var(--pixel-font);
+  font-size: 12px;
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section-info .timeline li h4 {
+  margin: 5px 0 0;
+  font-family: var(--text-font);
+  font-size: 15px;
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section-info .timeline li p {
+  margin: 7px 0 0;
+  font-size: 11px;
+  font-family: var(--text-font);
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section-info .timeline li::before {
+  content: "";
+  position: absolute;
+  left: -32px;
+  top: 12px;
+  width: 13px;
+  height: 13px;
+  background: #a05a2c;
+  border: 2px solid #4d2908;
+  border-radius: 50%;
+}

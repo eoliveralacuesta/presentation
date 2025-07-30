@@ -183,8 +183,23 @@ function openSection(elementId) {
 		el.classList.add('container_section--active');
 }
 
-
-function onSubmit(form){
-	//Revisar los campos, obligatorio es solo el mensaje y email o teléfono (si hay uno de los dos ya es válido)
+const svcID = 'service_ip3oywp', tmpID = 'template_elu0zn8';
+function onSubmit(event, form){
+	event.preventDefault();
 	
+	if(!form.checkValidity())
+	{
+		alert("Faltan algunos datos para enviarme un mensaje 😥");
+		return;
+	}
+
+	// Enviamos el formulario directamente
+	emailjs.sendForm(svcID, tmpID, form)
+      .then(() => {
+        alert("Tu mensaje fue enviado con éxito ✨");
+        form.reset();
+      }, (error) => {
+        alert("Ocurrió un error al enviar el mensaje 😥");
+        console.error(error);
+      });
 }

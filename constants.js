@@ -38,7 +38,7 @@ const LANGUAGES = {
     { selector: '.form_control[name="name"]', attributes: { placeholder: "Tu nombre (opcional)" } },
     { selector: '.form_control[name="email"]', attributes: { placeholder: "Tu correo electrónico" } },
     { selector: '.form_control[name="phone"]', attributes: { placeholder: "Tu número de contacto" } },
-    { selector: '.form_control[name="message"]', attributes: { placeholder: "¡Hola! Necesito..." } },
+    { selector: '.form_control[name="message"]', attributes: { placeholder: "¡Hola! Necesito...", innerText: '' } },
     { selector: '.form_button .form_button__submit', attributes: { innerText: "Enviar mensaje" } },
 	{ selector: '.form_button .form_button__wpp', attributes: { innerText: "Prefiero WhatsApp" } }
   ]
