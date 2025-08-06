@@ -71,12 +71,12 @@ function showLanguage(recommended) {
 	}
 }
 
-function setLanguage(language){
+function setLanguage(language, forceChange){
 	let el = document.querySelector('.sections-wrapper');
 	el.classList.remove('sections-wrapper--lang');
 	
 	//Si no cambió el lenguaje no tiene sentido realizar el reemplazo
-	if(LANGUAGE != language) { 
+	if(LANGUAGE != language || forceChange) { 
 		//Tomo los textos definidos en el archivo constants.js, referenciado antes de este archivo para ser válida la lectura de esta variable
 		let values = LANGUAGES[language];
 		
@@ -102,9 +102,11 @@ function setLanguage(language){
 			}
 		});
 	}
-
-	//Acá comienzo la animación ya con los textos cargados, vuelvo a la introducción para que tenga sentido todo el flujo de animación
-	goBack();
+	
+	if(!forceChange){
+		//Acá comienzo la animación ya con los textos cargados, vuelvo a la introducción para que tenga sentido todo el flujo de animación
+		goBack();
+	}
 }
 
 //Recibe un elemento, la cadena a animar y la velocidad (en ms), callback opcional para avisar la finalización de la animación
@@ -181,6 +183,8 @@ function openSection(elementId) {
 	let el = document.getElementById(elementId);
 	if (el)
 		el.classList.add('container_section--active');
+	
+	setLanguage(LANGUAGE, true);
 }
 
 const svcID = 'service_ip3oywp', tmpID = 'template_elu0zn8';

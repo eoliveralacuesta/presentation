@@ -23,14 +23,14 @@
 			<!-- ESTE ELEMENTO MARCA SI HAY UNA SECCIÓN ACTIVA O NO (PUEDE SER DE IDIOMA TAMBIÉN) -->
 			<div class="sections-wrapper"> 
 				<section class="tools">
-					<img id="go_back" class="pixel-pulse" src="img/GO_BACK.png" onClick="goBack()">
-					<img id="language_switcher" src="img/LANG_SWITCH.png" onClick="showLanguage()">
+					<img id="go_back" class="pixel-pulse" src="img/GO_BACK.webp" onClick="goBack()">
+					<img id="language_switcher" src="img/LANG_SWITCH.webp" onClick="showLanguage()">
 				</section>
 				
 				<div id="language">
-					<img id="language--ES" src="img/ES.svg" onClick="setLanguage('ES')" />
+					<img id="language--ES" src="img/ES.webp" onClick="setLanguage('ES')" />
 				
-					<img id="language--EN" src="img/EN.svg" onClick="setLanguage('EN')" />
+					<img id="language--EN" src="img/EN.webp" onClick="setLanguage('EN')" />
 				</div>
 
 				<div class="container">
@@ -38,16 +38,78 @@
 
 					<section id="actions" 
 							 class="container_section-actions">
-						<button id="actions_info" onClick="openSection('experience')">
+						<button id="actions_objectives" onClick="openSection('objectives')">
 							
 						</button>
-						<button id="actions_portfolio" onClick="openSection('portfolio')">
+						<button id="actions_collection" onClick="openSection('collection')">
 							
 						</button>
 						<button id="actions_contact" onClick="openSection('contact')">
 							
 						</button>
 					</section>
+
+					<section id="objectives" class="container_section container_section--objectives">
+						 <ul class="section_missions">
+							<li class="section_item" id="section_item--dev">
+								<img src="img/objectives/mission_dev.webp" />
+								<h4></h4>
+								<h3></h3>
+								
+								<div class="section_mission">
+									<p></p>
+								
+									<button></button>
+								</div>
+							</li>
+							<li class="section_item" id="section_item--ui">
+								<img src="img/objectives/mission_ui.webp" />
+								<h4></h4>
+								<h3></h3>
+								
+								<div class="section_mission">
+									<p></p>
+									
+									<button></button>
+								</div>
+							</li>
+							<li class="section_item" id="section_item--support">
+								<img src="img/objectives/mission_support.webp" />
+								<h4></h4>
+								<h3></h3>
+								
+								<div class="section_mission">
+									<p></p>
+								
+									<button></button>
+								</div>
+							</li>
+						</ul>
+						<ol class="section_levels">
+							<li class="section_item" id="section_item--dev">							
+								<img src="img/objectives/level_swords.webp" />
+
+								<h3></h3>
+								
+								<p></p>
+							</li>
+							<li class="section_item" id="section_item--ui">
+								<img src="img/objectives/level_arrow.webp" />
+								
+								<h3></h3>
+								
+								<p></p>
+							</li>
+							<li class="section_item" id="section_item--support">
+								<img src="img/objectives/level_wand.webp" />
+								
+								<h3></h3>
+								
+								<p></p>
+							</li>
+						</ol>
+					</section>
+
 
 					<section id="experience" class="container_section container_section-info">
 						 <ol class="timeline">

@@ -1,25 +1,6 @@
 const LANGUAGES = {
   EN: [
-    {
-      selector: '#portrait',
-      attributes: { alt: "Evelyn's animated portrait, with her setup behind." }
-    },
-    {
-      selector: '.container_welcome',
-      attributes: {
-        innerHTML: `Hi! I'm Evelyn, software developer and eternal self-learner.<br>
-        Fan of great organization powered by coffee, how can I help you?`
-      }
-    },
-    { selector: '#actions_info', attributes: { innerText: "About me" } },
-    { selector: '#actions_portfolio', attributes: { innerText: "Portfolio" } },
-    { selector: '#actions_contact', attributes: { innerText: "Contact me" } },
-    { selector: '.form_control[name="name"]', attributes: { placeholder: "Your name (optional)" } },
-    { selector: '.form_control[name="email"]', attributes: { placeholder: "Your email" } },
-    { selector: '.form_control[name="phone"]', attributes: { placeholder: "Your phone number" } },
-    { selector: '.form_control[name="message"]', attributes: { placeholder: "Hello! I need..." } },
-    { selector: '.form_button .form_button__wpp', attributes: { innerText: "Send message" } },
-	{ selector: '.form_button .form_button__wpp', attributes: { innerText: "I'd rather use WhatsApp" } }
+    // Por completar si es necesario
   ],
   ES: [
     {
@@ -32,14 +13,45 @@ const LANGUAGES = {
         innerHTML: `¡Hola! Soy Evelyn, desarrolladora de software; te invito a conocerme tanto personal como profesionalmente. <strong>Si tenés una necesidad, busquemos la solución.</strong>`
       }
     },
-    { selector: '#actions_info', attributes: { innerText: "EXPERIENCIA" } },
-    { selector: '#actions_portfolio', attributes: { innerText: "COLECCIÓN" } },
+
+    { selector: '#actions_objectives', attributes: { innerText: "OBJETIVOS" } },
+
+    // OBJETIVO 1
+    { selector: '#section_item--dev h4', attributes: { innerText: 'OBJETIVO 1' } },
+    { selector: '#section_item--dev h3', attributes: { innerText: 'DESARROLLO WEB' } },
+    { selector: '#section_item--dev .section_mission p', attributes: { innerText: 'Crear experiencias funcionales y atractivas optimizadas, que se vean bien en todos los dispositivos.' } },
+    { selector: '#section_item--dev .section_mission button', attributes: { innerText: 'ACEPTADO' } },
+
+    // OBJETIVO 2
+    { selector: '#section_item--ui h4', attributes: { innerText: 'OBJETIVO 2' } },
+    { selector: '#section_item--ui h3', attributes: { innerText: 'DISEÑO VISUAL' } },
+    { selector: '#section_item--ui .section_mission p', attributes: { innerText: 'Lograr que cada proyecto tenga identidad propia y coherencia, encontrando una solución adecuada para la marca.' } },
+    { selector: '#section_item--ui .section_mission button', attributes: { innerText: 'ACEPTADO' } },
+
+    // OBJETIVO 3
+    { selector: '#section_item--support h4', attributes: { innerText: 'OBJETIVO 3' } },
+    { selector: '#section_item--support h3', attributes: { innerText: 'ASESORÍA Y SOPORTE' } },
+    { selector: '#section_item--support .section_mission p', attributes: { innerText: 'Acompañar al cliente cada etapa del proyecto resolviendo dudas y guiando para que todo fluya sin estrés.' } },
+    { selector: '#section_item--support .section_mission button', attributes: { innerText: 'ACEPTADO' } },
+
+    // NIVELES
+    { selector: 'ol .section_item#section_item--dev h3', attributes: { innerText: 'Nivel 1: INICIACIÓN' } },
+    { selector: 'ol .section_item#section_item--dev p', attributes: { innerText: 'Aprender a hacer páginas que no se rompen... casi nunca.' } },
+    { selector: 'ol .section_item#section_item--ui h3', attributes: { innerText: 'Nivel 2: INDEPENDENCIA' } },
+    { selector: 'ol .section_item#section_item--ui p', attributes: { innerText: 'Ayudar marcas y emprendedores a brillar digitalmente.' } },
+    { selector: 'ol .section_item#section_item--support h3', attributes: { innerText: 'Nivel 3: INTEGRACIÓN' } },
+    { selector: 'ol .section_item#section_item--support p', attributes: { innerText: 'Armar soluciones integrales, combinando lo anterior para la idea de un producto final; sin perder la magia en el proceso.' } },
+
+    // Botones navegación
+    { selector: '#actions_collection', attributes: { innerText: "COLECCIÓN" } },
     { selector: '#actions_contact', attributes: { innerText: "MENSAJES" } },
+
+    // Formulario
     { selector: '.form_control[name="name"]', attributes: { placeholder: "Tu nombre (opcional)" } },
     { selector: '.form_control[name="email"]', attributes: { placeholder: "Tu correo electrónico" } },
     { selector: '.form_control[name="phone"]', attributes: { placeholder: "Tu número de contacto" } },
     { selector: '.form_control[name="message"]', attributes: { placeholder: "¡Hola! Necesito...", innerText: '' } },
     { selector: '.form_button .form_button__submit', attributes: { innerText: "Enviar mensaje" } },
-	{ selector: '.form_button .form_button__wpp', attributes: { innerText: "Prefiero WhatsApp" } }
+    { selector: '.form_button .form_button__wpp', attributes: { innerText: "Prefiero WhatsApp" } }
   ]
 };

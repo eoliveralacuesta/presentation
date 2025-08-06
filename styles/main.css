@@ -1,5 +1,6 @@
 @import url('./modules/common.css');
-@import url('./modules/experience.css');
+@import url('./modules/objectives.css');
+@import url('./modules/collection.css');
 @import url('./modules/form.css');
 
 
@@ -217,7 +218,7 @@
 	display: none;
 }
 
-.eol-body .sections-wrapper .container section.container_section-actions button {
+.eol-body .sections-wrapper .container button {
     height: clamp(50px, 10vh, 100px);
     width: 100%;
     aspect-ratio: 3 / 1;

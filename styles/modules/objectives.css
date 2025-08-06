@@ -1,0 +1,107 @@
+/**** MISSIONS ****/
+.eol-body .sections-wrapper .container section.container_section.container_section--objectives ul.section_missions {
+	list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    align-items: stretch;
+    gap: 10px;
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section--objectives ul.section_missions li.section_item {
+	flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+	background-color: var(--lightbrown-color);
+	box-shadow: 0 0 0 2px var(--brown-color);
+    border: 1px solid black;
+	
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section--objectives ul.section_missions li.section_item img {
+	max-width: 60%;
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section--objectives ul.section_missions li.section_item h4 {
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section--objectives ul.section_missions li.section_item h3 {
+	margin-top: 0;
+	margin-bottom: 5px;
+	font-family: var(--pixel-font);
+	font-size: 11px;
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section--objectives ul.section_missions li.section_item .section_mission {
+	margin-top: auto;
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section--objectives ul.section_missions li.section_item p {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section--objectives ul.section_missions li.section_item button {
+    pointer-events: none;
+    height: auto;
+    width: 100%;
+    font-size: 9px;
+    opacity: .7;
+}
+
+
+/** LEVELS **/
+.eol-body .sections-wrapper .container section.container_section.container_section--objectives ol.section_levels {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	padding: 0;
+	gap: 10px;
+	margin-top: 15px;
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section--objectives ol.section_levels li.section_item {
+	flex: 1;
+	display: grid;
+	grid-template-columns: 50px 1fr;
+	grid-template-rows: auto auto;
+	align-items: center;
+	column-gap: 15px;
+	padding: 10px 10px 20px;
+	border-radius: 6px;
+	background-color: var(--lightbrown-color);
+	box-shadow: 0 0 0 2px var(--brown-color);
+	border: 1px solid black;
+	row-gap: 0;
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section--objectives ol.section_levels li.section_item img {
+	max-width: 100%;
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section--objectives ol.section_levels li.section_item h3 {
+	margin: 0;
+	font-family: var(--pixel-font);
+	font-size: 15px;
+	line-height: 1;
+	font-weight: 400;
+	font-variant: all-small-caps;
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section--objectives ol.section_levels li.section_item p {
+	margin: 0;
+	font-size: 14px;
+	grid-row: 2;
+	grid-column: 2;
+}
