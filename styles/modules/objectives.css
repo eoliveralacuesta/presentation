@@ -144,14 +144,14 @@
 
 /* 🖱️ Hover con saltito en desktop */
 @media (hover: hover) and (pointer: fine) {
-	.eol-body .container_section--objectives .section_item:hover img {
+	.eol-body .sections-wrapper .container section.container_section.container_section--objectives .section_item:hover img {
 		animation: pixel-jump 0.4s ease infinite;
 	}
 }
 
 /* 🤲 Brillo pulsante en móviles */
 @media (hover: none) and (pointer: coarse) {
-	.eol-body .container_section--objectives .section_item {
+	.eol-body .sections-wrapper .container section.container_section.container_section--objectives .section_item img {
 		animation: pixel-pulse 2.5s infinite alternate;
 	}
 }
