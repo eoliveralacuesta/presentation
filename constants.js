@@ -47,7 +47,7 @@ const LANGUAGES = {
     { selector: '#actions_contact', attributes: { innerText: "MENSAJES" } },
 
     // Formulario
-    { selector: '.form_control[name="name"]', attributes: { placeholder: "Tu nombre (opcional)" } },
+    { selector: '.form_control[name="name"]', attributes: { placeholder: "Tu nombre" } },
     { selector: '.form_control[name="email"]', attributes: { placeholder: "Tu correo electrónico" } },
     { selector: '.form_control[name="phone"]', attributes: { placeholder: "Tu número de contacto" } },
     { selector: '.form_control[name="message"]', attributes: { placeholder: "¡Hola! Necesito...", innerText: '' } },

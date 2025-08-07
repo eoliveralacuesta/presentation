@@ -1,52 +1,72 @@
+/* INPUTS Y TEXTAREA */
 .eol-body .sections-wrapper .container section.container_section.container_section-form form > input,
 .eol-body .sections-wrapper .container section.container_section.container_section-form form > textarea {
 	font-family: monospace;
-	font-size: 14px;
-	background-color: var(--lightbrown-color);
-	color: var(--main-color);
-	border: 2px solid #4d2908;
-	border-radius: 4px;
-	padding: 5px 10px;
-	box-shadow: 2px 2px 0 #4d2908;
-	margin-bottom: 10px;
-	outline: none;
-	position: relative;
-	display: block;
-	width: 100%;
-	box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #fff8ee;
+    color: var(--text-color);
+    border: 2px solid var(--brown-color);
+    border-radius: 6px;
+    padding: 10px 12px;
+    box-shadow: inset 2px 2px 0 #d49c6a, 2px 2px 0 #672905;
+    margin-bottom: 12px;
+    outline: none;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+    letter-spacing: 0.4px;
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section-form form > input:focus,
+.eol-body .sections-wrapper .container section.container_section.container_section-form form > textarea:focus {
+	background-color: #fff1da;
+	box-shadow:
+		inset 0 0 0 2px #ffe066,
+		0 0 6px #ffe066;
+	transform: scale(1.01);
 }
 
 .eol-body .sections-wrapper .container section.container_section.container_section-form form > input::placeholder,
 .eol-body .sections-wrapper .container section.container_section.container_section-form form > textarea::placeholder {
-  color: #a05a2c;
+	color: #a77b50;
+	font-size: 10px;
+	font-style: italic;
+	opacity: 0.85;
 }
 
+/* TEXTAREA */
 .eol-body .sections-wrapper .container section.container_section.container_section-form form > textarea {
-  resize: none;
-  overflow-y: auto;
-  min-height: 60px;
+	resize: vertical;
+	min-height: 100px;
+	overflow-y: auto;
 }
 
+/* BOTONES */
 .eol-body .sections-wrapper .container section.container_section.container_section-form form > div.form_button {
-	text-align: right;
+	display: flex;
+	gap: 10px;
+	justify-content: flex-end;
+	align-items: center;
 }
 
 .eol-body .sections-wrapper .container section.container_section.container_section-form form .form_button > button {
-  font-family: monospace;
-  font-size: 11px;
-  background-color: #fbe1c4;
-  color: #4d2908;
-  border: 2px solid #4d2908;
-  padding: 10px 14px;
-  border-radius: 4px;
-  cursor: pointer;
-  box-shadow: 2px 2px 0 #4d2908;
-  transition: transform 0.1s, box-shadow 0.1s;
-  margin-right: 10px;
+	font-family: var(--pixel-font);
+	font-size: 14px;
+    font-variant: all-small-caps;
+	max-width: 200px;
 }
 
-.eol-body .sections-wrapper .container section.container_section.container_section-form > button:hover {
-  transform: translate(1px, 1px);
-  box-shadow: 1px 1px 0 #4d2908;
-  background-color: #f4d3b2;
+/* Errores en formulario */
+.eol-body .sections-wrapper .container section.container_section.container_section-form form > input:invalid,
+.eol-body .sections-wrapper .container section.container_section.container_section-form form > textarea:invalid {
+	box-shadow: inset 0 0 0 2px red;
+	background-color: #ffe5e5;
+}
+
+@media (max-width: 500px) {
+	.eol-body .sections-wrapper .container section.container_section.container_section-form form > div.form_button {
+		flex-direction: column;
+	}
 }
