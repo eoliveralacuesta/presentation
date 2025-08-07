@@ -111,39 +111,39 @@
 					</section>
 
 
-					<section id="experience" class="container_section container_section-info">
-						 <ol class="timeline">
-							<li>
-								<time datetime="2023">05/2023 – actual</time>
-								<h3>LUMBRA</h3>
-								<h4>Coordinadora de <i>marketing</i> digital</h4>
-								<p>Diseño de materiales gráficos, fotografía y edición para productos artesanales. Gestión de redes sociales y contenido visual en plataformas digitales. Vinculación de canales de venta y comunicación.</p>
-							</li>
+					<!-- <section id="experience" class="container_section container_section-info"> -->
+						 <!-- <ol class="timeline"> -->
+							<!-- <li> -->
+								<!-- <time datetime="2023">05/2023 – actual</time> -->
+								<!-- <h3>LUMBRA</h3> -->
+								<!-- <h4>Coordinadora de <i>marketing</i> digital</h4> -->
+								<!-- <p>Diseño de materiales gráficos, fotografía y edición para productos artesanales. Gestión de redes sociales y contenido visual en plataformas digitales. Vinculación de canales de venta y comunicación.</p> -->
+							<!-- </li> -->
 							
-							<li>
-								<time datetime="2023">02/2023 – 06/2025</time>
-								<h3>ZUREO SOFTWARE</h3>
-								<h4>Desarrolladora <i>full-stack</i></h4>
-								<p>Desarrollo de aplicaciones web y servicios API REST a demanda.<br><br>Supervisión de miembros trainee para los equipos de desarrollo y trabajo a la par con sector UX/UI.</p>
-							</li>
+							<!-- <li> -->
+								<!-- <time datetime="2023">02/2023 – 06/2025</time> -->
+								<!-- <h3>ZUREO SOFTWARE</h3> -->
+								<!-- <h4>Desarrolladora <i>full-stack</i></h4> -->
+								<!-- <p>Desarrollo de aplicaciones web y servicios API REST a demanda.<br><br>Supervisión de miembros trainee para los equipos de desarrollo y trabajo a la par con sector UX/UI.</p> -->
+							<!-- </li> -->
 							
-							<li>
-								<time datetime="2023">02/2023 – actual</time>
-								<h3><i>FREELANCER</i></h3>
-								<h4>Desarrolladora de <i>software</i></h4>
-								<p>Desarrollo de aplicaciones web, servicios API REST e integraciones con plataformas e-commerce para diferentes empresas.<br><br>Uso de Jira, Slack, GitHub, GitLab, NopCommerce. Conocimiento y desarrollos realizados utilizando Node.js, Angular 12, Angular 14, ReactJS, MySQL y diversas librerías.</p>
-							</li>
+							<!-- <li> -->
+								<!-- <time datetime="2023">02/2023 – actual</time> -->
+								<!-- <h3><i>FREELANCER</i></h3> -->
+								<!-- <h4>Desarrolladora de <i>software</i></h4> -->
+								<!-- <p>Desarrollo de aplicaciones web, servicios API REST e integraciones con plataformas e-commerce para diferentes empresas.<br><br>Uso de Jira, Slack, GitHub, GitLab, NopCommerce. Conocimiento y desarrollos realizados utilizando Node.js, Angular 12, Angular 14, ReactJS, MySQL y diversas librerías.</p> -->
+							<!-- </li> -->
 							
-							<li>
-								<time datetime="2020">01/2020 – 10/2022</time>
-								<h3>ZUREO SOFTWARE</h3>
-								<h4>Desarrolladora <i>full-stack</i></h4>
-								<p>Desarrollo de aplicaciones web, servicios API REST e integraciones con plataformas e-commerce, trabajo conjunto con áreas UX/UI y QA.<br><br>Supervisión de miembros trainee para los equipos de QA y desarrollo. Organización y asignación de tareas, revisión de código y resultados finales.<br<br>>Uso de AzureDevOps, AngularJS, Angular 8, C#, .NET Framework, MongoDB, TSQL.</p>
-							</li>
-						</ol>
-					</section>
+							<!-- <li> -->
+								<!-- <time datetime="2020">01/2020 – 10/2022</time> -->
+								<!-- <h3>ZUREO SOFTWARE</h3> -->
+								<!-- <h4>Desarrolladora <i>full-stack</i></h4> -->
+								<!-- <p>Desarrollo de aplicaciones web, servicios API REST e integraciones con plataformas e-commerce, trabajo conjunto con áreas UX/UI y QA.<br><br>Supervisión de miembros trainee para los equipos de QA y desarrollo. Organización y asignación de tareas, revisión de código y resultados finales.<br<br>>Uso de AzureDevOps, AngularJS, Angular 8, C#, .NET Framework, MongoDB, TSQL.</p> -->
+							<!-- </li> -->
+						<!-- </ol> -->
+					<!-- </section> -->
 
-					<section id="portfolio" class="container_section container_section-portfolio">
+					<section id="collection" class="container_section container_section-collection">
 					
 					</section>
 
@@ -151,23 +151,33 @@
 						<form class="form"
 							  name="contact"
 							  onsubmit="onSubmit(event, this)">
-							<input class="form_control" 
-								   name="name" 
-								   autocomplete="on"
-								   type="text"
-								   required />
-								   
-							<input class="form_control" 
-								   name="email" 
-								   autocomplete="on"
-								   type="email"
-								   required />
-								   
-							<input class="form_control" 
-								   name="phone" 
-								   autocomplete="on"
-								   type="phone" />
-								   
+							
+							<div class="form_input--group">
+								<img src="img/icons/form_name.png" id="form_icon--name" class="form_control--icon" />
+								<input class="form_control" 
+									   name="name" 
+									   autocomplete="on"
+									   type="text"
+									   required />
+							</div>
+							
+							<div class="form_input--group">
+								<img src="img/icons/form_email.png" id="form_icon--email" class="form_control--icon" />
+								<input class="form_control" 
+									   name="email" 
+									   autocomplete="on"
+									   type="email"
+									   required />
+							</div>
+
+							<div class="form_input--group">
+								<img src="img/icons/form_phone.png" id="form_icon--phone" class="form_control--icon" />
+								<input class="form_control" 
+									   name="phone" 
+									   autocomplete="on"
+									   type="phone" />
+							</div>	
+							
 							<textarea class="form_control form_control-textarea" 
 									  name="message"
 									  autocomplete="off"
