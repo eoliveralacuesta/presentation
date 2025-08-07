@@ -6,7 +6,7 @@
 
 .eol-body .sections-wrapper .container section.container_section.container_section-form form .form_input--group:focus-within img.form_control--icon {
 	animation: pixel-jump 0.4s ease infinite;
-	scale: .8;
+	scale: .9;
 }
 
 .eol-body .sections-wrapper .container section.container_section.container_section-form form .form_input--group img.form_control--icon {
