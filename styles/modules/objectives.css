@@ -25,7 +25,7 @@
 }
 
 .eol-body .sections-wrapper .container section.container_section.container_section--objectives ul.section_missions li.section_item img {
-	max-width: 60%;
+	width: clamp(50px, 60%, 120px);
 }
 
 .eol-body .sections-wrapper .container section.container_section.container_section--objectives ul.section_missions li.section_item h4 {
@@ -49,14 +49,33 @@
 .eol-body .sections-wrapper .container section.container_section.container_section--objectives ul.section_missions li.section_item p {
     margin-top: 0;
     margin-bottom: 15px;
+	font-size: 13px;
 }
 
 .eol-body .sections-wrapper .container section.container_section.container_section--objectives ul.section_missions li.section_item button {
-    pointer-events: none;
+	pointer-events: none;
     height: auto;
     width: 100%;
-    font-size: 9px;
+    max-width: 120px;
+	margin: auto;
+	font-size: 10px;
     opacity: .7;
+}
+
+@media (max-width: 500px) {
+	.eol-body .sections-wrapper .container section.container_section.container_section--objectives ul.section_missions {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.eol-body .sections-wrapper .container section.container_section.container_section--objectives ul.section_missions li.section_item {
+		padding: 2vw 5vw;
+	}
+
+	.eol-body .sections-wrapper .container section.container_section.container_section--objectives ul.section_missions li.section_item p {
+		font-size: 16px;
+	}
+
 }
 
 
@@ -68,7 +87,7 @@
 	margin: 0;
 	padding: 0;
 	gap: 10px;
-	margin-top: 15px;
+	margin-top: 20px;
 }
 
 .eol-body .sections-wrapper .container section.container_section.container_section--objectives ol.section_levels li.section_item {
@@ -78,7 +97,7 @@
 	grid-template-rows: auto auto;
 	align-items: center;
 	column-gap: 15px;
-	padding: 10px 10px 20px;
+	padding: 20px;
 	border-radius: 6px;
 	background-color: var(--lightbrown-color);
 	box-shadow: 0 0 0 2px var(--brown-color);
@@ -88,10 +107,11 @@
 
 .eol-body .sections-wrapper .container section.container_section.container_section--objectives ol.section_levels li.section_item img {
 	max-width: 100%;
+	grid-row: span 2;
 }
 
 .eol-body .sections-wrapper .container section.container_section.container_section--objectives ol.section_levels li.section_item h3 {
-	margin: 0;
+	margin: 0 0 10px;
 	font-family: var(--pixel-font);
 	font-size: 15px;
 	line-height: 1;
@@ -104,4 +124,34 @@
 	font-size: 14px;
 	grid-row: 2;
 	grid-column: 2;
+}
+
+
+/* 🎯 Animación de entrada para objetivos y niveles */
+@keyframes missionEnter {
+	from {
+		transform: translateY(15px) scale(0.95);
+	}
+	to {
+		transform: translateY(0) scale(1);
+	}
+}
+
+.eol-body .container_section--objectives .section_item {
+	animation: missionEnter 0.5s ease-out both;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 🖱️ Hover con saltito en desktop */
+@media (hover: hover) and (pointer: fine) {
+	.eol-body .container_section--objectives .section_item:hover img {
+		animation: pixel-jump 0.4s ease infinite;
+	}
+}
+
+/* 🤲 Brillo pulsante en móviles */
+@media (hover: none) and (pointer: coarse) {
+	.eol-body .container_section--objectives .section_item {
+		animation: pixel-pulse 2.5s infinite alternate;
+	}
 }

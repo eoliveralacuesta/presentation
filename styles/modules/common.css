@@ -7,14 +7,6 @@
 	--lightbrown-color: #ffca998a;
 }
 
-@media (hover: none) and (pointer: coarse) {
-	.eol-body a,
-	.eol-body button,
-	.eol-body .pixel-pulse {
-		animation: pixel-pulse 2.5s infinite alternate;
-	}
-}
-
 @keyframes pixel-scale {
 	transform-origin: center center;	
 	from {
@@ -35,3 +27,29 @@
     transform: scale(1.03);
   }
 }
+
+@keyframes pixel-jump {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
+}
+
+.eol-body .pixel-jump:hover {
+	animation: pixel-jump 2.5s infinite alternate;
+}
+
+.eol-body a:hover,
+.eol-body button:hover,
+.eol-body img[class="pixel-animation"]:hover,
+.eol-body div#language img[class*=recommended] {
+	animation: pixel-scale .5s infinite alternate;
+}
+
+@media (hover: none) and (pointer: coarse) {
+	.eol-body a,
+	.eol-body button,
+	.eol-body .pixel-animation {
+		animation: pixel-pulse 2.5s infinite alternate;
+	}
+}
+
