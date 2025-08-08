@@ -23,8 +23,16 @@
 			<!-- ESTE ELEMENTO MARCA SI HAY UNA SECCIÓN ACTIVA O NO (PUEDE SER DE IDIOMA TAMBIÉN) -->
 			<div class="sections-wrapper"> 
 				<section class="tools">
-					<img id="go_back" class="pixel-animation" src="img/GO_BACK.webp" onClick="goBack()">
-					<img id="language_switcher" class="pixel-animation" src="img/LANG_SWITCH.webp" onClick="showLanguage()">
+					<img id="go_back" class="pixel-animation" src="img/go_back.webp" onClick="goBack()" role="button">
+					
+					
+					
+					<span>
+						<img id="music_off" class="pixel-animation" src="img/sound_off.webp" onClick="toggleMusic(false)" role="button">
+						<img id="music_on" class="pixel-animation" src="img/sound_on.webp" onClick="toggleMusic(true)" role="button">
+						
+						<img id="language_switcher" class="pixel-animation" src="img/lang_switch.webp" onClick="showLanguage()" role="button">
+					</span>
 				</section>
 				
 				<div id="language">
@@ -110,7 +118,8 @@
 						</ol>
 					</section>
 
-
+					<section id="collection" class="container_section container_section-collection">
+					
 					<!-- <section id="experience" class="container_section container_section-info"> -->
 						 <!-- <ol class="timeline"> -->
 							<!-- <li> -->
@@ -143,8 +152,6 @@
 						<!-- </ol> -->
 					<!-- </section> -->
 
-					<section id="collection" class="container_section container_section-collection">
-					
 					</section>
 
 					<section id="contact" class="container_section container_section-form">
@@ -202,7 +209,6 @@
 
 		<script src="constants.js"></script>
 		
-		<!-- <script src="https://cdn.emailjs.com/dist/email.min.js"></script> -->
 		<script type="text/javascript"
 				src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 		</script>
@@ -213,6 +219,8 @@
 			  });
 		   })();
 		</script>		
+		
+		<audio id="bg-music" src="assets/sound.ogg" preload="auto" autoplay loop></audio>
 		
 		<script src="script.js"></script>
 	</body>

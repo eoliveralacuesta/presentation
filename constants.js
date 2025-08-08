@@ -14,6 +14,11 @@ const LANGUAGES = {
       }
     },
 
+	{ selector: '#go_back', attributes: { alt: 'Volver' } },
+	{ selector: '#language_switcher', attributes: { alt: 'Cambiar idioma' } },
+	{ selector: '#music_on', attributes: { alt: 'Silenciar música' } },
+	{ selector: '#music_off', attributes: { alt: 'Reanudar música' } },
+
     { selector: '#actions_objectives', attributes: { innerText: "OBJETIVOS" } },
 
     // OBJETIVO 1

@@ -50,7 +50,46 @@ document.addEventListener('DOMContentLoaded', function() {
 			completedPortrait();
 		};
 	}
+	
+	// ===== CONTROL DE MÚSICA =====
+	bgm = document.getElementById('bg-music');
+	
+	if (bgm) {
+		// Obtenemos el estado inicial desde localStorage, para respetar la última interacción del usuario
+		const saved = localStorage.getItem('musicMuted');
+		bgm.muted = (saved === null) ? true : (saved === 'true');
+
+		// Cuando el audio está listo para reproducirse sin cortes
+		bgm.addEventListener('canplaythrough', () => {
+			bgm.volume = 0.07;
+			toggleMusic(bgm.muted);
+		}, { once: true });
+
+		// Reproducir en la primer interacción del usuario
+		const startOnFirstGesture = () => {
+			bgm.play().catch(()=>{});
+			window.removeEventListener('pointerdown', startOnFirstGesture);
+			window.removeEventListener('keydown', startOnFirstGesture);
+		};
+		
+		window.addEventListener('pointerdown', startOnFirstGesture, { once: true });
+		window.addEventListener('keydown', startOnFirstGesture, { once: true });
+	}	
 });
+
+//Cambia entre activo/inactivo el audio de fondo
+function toggleMusic(mute) {
+    localStorage.setItem('musicMuted', bgm.muted = mute);
+	
+	if (mute){
+		document.body.classList.remove('playing-music');	
+		bgm.pause().catch(()=>{});
+	}
+	else {
+		bgm.play().catch(()=>{});
+		document.body.classList.add('playing-music');
+	}
+}
 
 function showLanguage(recommended) {
 	if(!recommended)
@@ -102,21 +141,41 @@ function setLanguage(language, forceChange){
 			}
 		});
 	}
-	
-	if(!forceChange){
-		//Acá comienzo la animación ya con los textos cargados, vuelvo a la introducción para que tenga sentido todo el flujo de animación
+
+	//Acá comienzo la animación ya con los textos cargados, vuelvo a la introducción para que tenga sentido todo el flujo de animación
+	if(!forceChange)
 		goBack();
-	}
+}
+
+
+var stopTypewriter = false;
+// Frena el typewriter en la primera interacción
+function enableTypewriterStop() {
+	stopTypewriter = false;
+    const stop = () => stopTypewriter = true;
+    document.addEventListener('pointerdown', stop, { once: true });
+    document.addEventListener('keydown', stop, { once: true });
 }
 
 //Recibe un elemento, la cadena a animar y la velocidad (en ms), callback opcional para avisar la finalización de la animación
 function animateAsTypewriter(element, html, speed = 30, callback = null) {
+	enableTypewriterStop();
     element.innerHTML = "";
     let i = 0;
     let tag = '';
     let writingTag = false;
 
     function typeChar() {
+		if (stopTypewriter) {
+            // Si se interrumpe, completa el texto de golpe
+            element.innerHTML = html;
+            if (typeof callback === 'function') 
+				callback();
+			
+			stopTypewriter = false;
+            return;
+        }
+		
         if (i < html.length) {
             let char = html[i];
             if (char === '<') writingTag = true;

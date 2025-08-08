@@ -74,14 +74,21 @@
 	max-height: 0;
 }
 
-.eol-body .sections-wrapper .tools img#go_back,
-.eol-body .sections-wrapper .tools img#language_switcher {
+.eol-body .sections-wrapper .tools img {
 	position: relative;
 	height: clamp(50px, 5vh, 75px);
 	aspect-ratio: 1.5 / 1;
 	display: inline-block;
 	transition: opacity .3s ease-in-out;
+	z-index: 50;
 }
+
+.eol-body.playing-music .sections-wrapper .tools img#music_off,
+.eol-body:not([class*='playing-music']) .sections-wrapper .tools img#music_on {
+	opacity: 0;
+	max-height: 0;
+}
+
 
 .eol-body .sections-wrapper:not([class*=--open]) .tools img#go_back,
 .eol-body .sections-wrapper.sections-wrapper--lang img#language_switcher,
