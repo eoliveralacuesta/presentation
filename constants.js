@@ -10,7 +10,7 @@ const LANGUAGES = {
     {
       selector: '.container_welcome',
       attributes: {
-        innerHTML: `¡Hola! Soy Evelyn, desarrolladora de software; te invito a conocerme tanto personal como profesionalmente. <strong>Si tenés una necesidad, busquemos la solución.</strong>`
+        innerHTML: `¡Hola! Soy Evelyn, desarrolladora de software; te invito a conocerme tanto personal como profesionalmente. Si tenés una necesidad, busquemos la solución.`
       }
     },
 
