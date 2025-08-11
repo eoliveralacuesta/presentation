@@ -6,6 +6,12 @@
 
 		<title>Evelyn Olivera SAS</title>
 
+		<!-- IMÁGENES CON PRIORIDAD PARA LA CARGA INICIAL -->
+		<link rel="preload" href="img/ES.webp" as="image">
+		<link rel="preload" href="img/EN.webp" as="image">
+		<link rel="preload" href="img/portrait.svg" as="image">
+		<link rel="preload" href="img/background.svg" as="image">
+
 		<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
@@ -18,184 +24,155 @@
 	<body class="eol-body loading">
 		<div class="wrapper">
 			<img id="portrait"
+				 data-i18n-scope="general"
+				 data-i18n-alt="portrait"
 				 src="img/portrait.svg">
 
 			<!-- ESTE ELEMENTO MARCA SI HAY UNA SECCIÓN ACTIVA O NO (PUEDE SER DE IDIOMA TAMBIÉN) -->
 			<div class="sections-wrapper"> 
-				<section class="tools">
-					<img id="go_back" class="pixel-animation" src="img/go_back.webp" onClick="goBack()" role="button">
-					
-					
+				<section class="tools" data-i18n-scope="general">
+					<img id="go_back" class="pixel-animation" src="img/go_back.webp" data-i18n="buttons.back" onClick="goBack()" role="button">
 					
 					<span>
-						<img id="music_off" class="pixel-animation" src="img/sound_off.webp" onClick="toggleMusic(false)" role="button">
-						<img id="music_on" class="pixel-animation" src="img/sound_on.webp" onClick="toggleMusic(true)" role="button">
+						<img id="music_off" class="pixel-animation" src="img/sound_off.webp" data-i18n="buttons.music.off" onClick="toggleMusic(false)" role="button">
+						<img id="music_on" class="pixel-animation" src="img/sound_on.webp" data-i18n="buttons.music.on" onClick="toggleMusic(true)" role="button">
 						
-						<img id="language_switcher" class="pixel-animation" src="img/lang_switch.webp" onClick="showLanguage()" role="button">
+						<img id="language_switcher" class="pixel-animation" src="img/lang_switch.webp" data-i18n="buttons.lang" onClick="showLanguage()" role="button">
 					</span>
 				</section>
 				
-				<div id="language">
-					<img id="language--ES" class="pixel-animation" src="img/ES.webp" onClick="setLanguage('ES')" />
+				<div id="language" data-i18n-scope="general">
+					<img id="language--ES" class="pixel-animation" src="img/ES.webp" data-i18n="buttons.languages.ES" onClick="setLanguage('ES')" />
 				
-					<img id="language--EN" class="pixel-animation" src="img/EN.webp" onClick="setLanguage('EN')" />
+					<img id="language--EN" class="pixel-animation" src="img/EN.webp" data-i18n="buttons.languages.EN" onClick="setLanguage('EN')" />
 				</div>
 
 				<div class="container">
-					<h1 class="container_welcome"></h1>
+					<h1 class="container_welcome" data-i18n-scope="general" data-i18n="welcome"></h1>
 
-					<section id="actions" 
+					<section id="actions" data-i18n-scope="general"
 							 class="container_section-actions">
-						<button id="actions_objectives" onClick="openSection('objectives')">
-							
-						</button>
-						<button id="actions_collection" onClick="openSection('collection')">
-							
-						</button>
-						<button id="actions_contact" onClick="openSection('contact')">
-							
-						</button>
+						<button id="actions_objectives" data-i18n="buttons.objectives" onClick="openSection('objectives')"></button>
+
+						<button id="actions_collection" data-i18n="buttons.collection" onClick="openSection('collection')"></button>
+
+						<button id="actions_contact" data-i18n="buttons.contact" onClick="openSection('contact')"></button>
 					</section>
 
-					<section id="objectives" class="container_section container_section--objectives">
-						 <ul class="section_missions">
+					<section id="objectives" class="container_section container_section--objectives" data-i18n-scope="objectives">
+						 <ul class="section_missions" data-i18n-scope="missions">
 							<li class="section_item" id="section_item--dev">
-								<img src="img/objectives/mission_dev.webp" />
-								<h4></h4>
-								<h3></h3>
+								<img src="img/objectives/mission_dev.webp" data-i18n="dev.alt" />
+								<h4 data-i18n="dev.cta"></h4>
+								<h3 data-i18n="dev.title"></h3>
 								
 								<div class="section_mission">
-									<p></p>
+									<p data-i18n="dev.description"></p>
 								
-									<button></button>
+									<button data-i18n="button" disabled></button>
 								</div>
 							</li>
 							<li class="section_item" id="section_item--ui">
-								<img src="img/objectives/mission_ui.webp" />
-								<h4></h4>
-								<h3></h3>
+								<img src="img/objectives/mission_ui.webp" data-i18n="ui.alt" />
+								<h4 data-i18n="ui.cta"></h4>
+								<h3 data-i18n="ui.title"></h3>
 								
 								<div class="section_mission">
-									<p></p>
+									<p data-i18n="ui.description"></p>
 									
-									<button></button>
+									<button data-i18n="button" disabled></button>
 								</div>
 							</li>
 							<li class="section_item" id="section_item--support">
-								<img src="img/objectives/mission_support.webp" />
-								<h4></h4>
-								<h3></h3>
+								<img src="img/objectives/mission_support.webp" data-i18n="support.alt" />
+								<h4 data-i18n="support.cta"></h4>
+								<h3 data-i18n="support.title"></h3>
 								
 								<div class="section_mission">
-									<p></p>
-								
-									<button></button>
+									<p data-i18n="support.description"></p>
+									
+									<button data-i18n="button" disabled></button>
 								</div>
 							</li>
 						</ul>
-						<ol class="section_levels">
-							<li class="section_item" id="section_item--dev">							
-								<img src="img/objectives/level_swords.webp" />
+						<ol class="section_levels" data-i18n-scope="levels">
+							<li class="section_item" id="section_item--first">							
+								<img src="img/objectives/level_swords.webp" data-i18n="first.alt" />
 
-								<h3></h3>
+								<h3 data-i18n="first.cta"></h3>
 								
-								<p></p>
+								<p data-i18n="first.description"></p>
 							</li>
-							<li class="section_item" id="section_item--ui">
-								<img src="img/objectives/level_arrow.webp" />
+							<li class="section_item" id="section_item--second">
+								<img src="img/objectives/level_arrow.webp" data-i18n="second.alt" />
+
+								<h3 data-i18n="second.cta"></h3>
 								
-								<h3></h3>
-								
-								<p></p>
+								<p data-i18n="second.description"></p>
 							</li>
-							<li class="section_item" id="section_item--support">
-								<img src="img/objectives/level_wand.webp" />
+							<li class="section_item" id="section_item--third">
+								<img src="img/objectives/level_wand.webp" data-i18n="third.alt" />
+
+								<h3 data-i18n="third.cta"></h3>
 								
-								<h3></h3>
-								
-								<p></p>
+								<p data-i18n="third.description"></p>
 							</li>
 						</ol>
 					</section>
 
-					<section id="collection" class="container_section container_section-collection">
+					<section id="collection" class="container_section container_section-collection" data-i18n-scope="collection">
 					
-					<!-- <section id="experience" class="container_section container_section-info"> -->
-						 <!-- <ol class="timeline"> -->
-							<!-- <li> -->
-								<!-- <time datetime="2023">05/2023 – actual</time> -->
-								<!-- <h3>LUMBRA</h3> -->
-								<!-- <h4>Coordinadora de <i>marketing</i> digital</h4> -->
-								<!-- <p>Diseño de materiales gráficos, fotografía y edición para productos artesanales. Gestión de redes sociales y contenido visual en plataformas digitales. Vinculación de canales de venta y comunicación.</p> -->
-							<!-- </li> -->
-							
-							<!-- <li> -->
-								<!-- <time datetime="2023">02/2023 – 06/2025</time> -->
-								<!-- <h3>ZUREO SOFTWARE</h3> -->
-								<!-- <h4>Desarrolladora <i>full-stack</i></h4> -->
-								<!-- <p>Desarrollo de aplicaciones web y servicios API REST a demanda.<br><br>Supervisión de miembros trainee para los equipos de desarrollo y trabajo a la par con sector UX/UI.</p> -->
-							<!-- </li> -->
-							
-							<!-- <li> -->
-								<!-- <time datetime="2023">02/2023 – actual</time> -->
-								<!-- <h3><i>FREELANCER</i></h3> -->
-								<!-- <h4>Desarrolladora de <i>software</i></h4> -->
-								<!-- <p>Desarrollo de aplicaciones web, servicios API REST e integraciones con plataformas e-commerce para diferentes empresas.<br><br>Uso de Jira, Slack, GitHub, GitLab, NopCommerce. Conocimiento y desarrollos realizados utilizando Node.js, Angular 12, Angular 14, ReactJS, MySQL y diversas librerías.</p> -->
-							<!-- </li> -->
-							
-							<!-- <li> -->
-								<!-- <time datetime="2020">01/2020 – 10/2022</time> -->
-								<!-- <h3>ZUREO SOFTWARE</h3> -->
-								<!-- <h4>Desarrolladora <i>full-stack</i></h4> -->
-								<!-- <p>Desarrollo de aplicaciones web, servicios API REST e integraciones con plataformas e-commerce, trabajo conjunto con áreas UX/UI y QA.<br><br>Supervisión de miembros trainee para los equipos de QA y desarrollo. Organización y asignación de tareas, revisión de código y resultados finales.<br<br>>Uso de AzureDevOps, AngularJS, Angular 8, C#, .NET Framework, MongoDB, TSQL.</p> -->
-							<!-- </li> -->
-						<!-- </ol> -->
-					<!-- </section> -->
 
 					</section>
 
-					<section id="contact" class="container_section container_section-form">
+					<section id="contact" class="container_section container_section-form" data-i18n-scope="contact">
 						<form class="form"
 							  name="contact"
 							  onsubmit="onSubmit(event, this)">
 							
-							<div class="form_input--group">
-								<img src="img/icons/form_name.png" id="form_icon--name" class="form_control--icon" />
+							<div class="form_input--group" data-i18n-scope="name">
+								<img src="img/icons/form_name.png" id="form_icon--name" class="form_control--icon" data-i18n-alt="icon" />
 								<input class="form_control" 
 									   name="name" 
 									   autocomplete="on"
 									   type="text"
+									   data-i18n-placeholder="placeholder"
 									   required />
 							</div>
 							
-							<div class="form_input--group">
-								<img src="img/icons/form_email.png" id="form_icon--email" class="form_control--icon" />
+							<div class="form_input--group" data-i18n-scope="email">
+								<img src="img/icons/form_email.png" id="form_icon--email" class="form_control--icon" data-i18n-alt="icon" />
 								<input class="form_control" 
 									   name="email" 
 									   autocomplete="on"
 									   type="email"
+									   data-i18n-placeholder="placeholder"
 									   required />
 							</div>
 
-							<div class="form_input--group">
-								<img src="img/icons/form_phone.png" id="form_icon--phone" class="form_control--icon" />
+							<div class="form_input--group" data-i18n-scope="phone">
+								<img src="img/icons/form_phone.png" id="form_icon--phone" class="form_control--icon" data-i18n-alt="icon" />
 								<input class="form_control" 
 									   name="phone" 
 									   autocomplete="on"
+									   data-i18n-placeholder="placeholder"
 									   type="phone" />
 							</div>	
 							
 							<textarea class="form_control form_control-textarea" 
 									  name="message"
 									  autocomplete="off"
+									  data-i18n="textarea"
 									  required>
 							</textarea>
 							
 							<div class="form_button">
 								<button type="submit"
+										data-i18n="buttons.send"
 										class="form_button__submit"></button>
 								
 								<button type="button"
+										data-i18n="buttons.wpp"
 										class="form_button__wpp"
 										onclick="window.open('https://wa.me/59897688678')" target="_blank"></button>
 							</div>
@@ -205,10 +182,7 @@
 				</div>
 			</div>
 		</div>
-		</div>
 
-		<script src="constants.js"></script>
-		
 		<script type="text/javascript"
 				src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 		</script>
@@ -221,7 +195,9 @@
 		</script>		
 		
 		<audio id="bg-music" src="assets/sound.ogg" preload="auto" autoplay loop></audio>
-		
-		<script src="script.js"></script>
+
+		<script src="js/constants.js"></script>
+		<script src="js/translator.js"></script>
+		<script src="js/scripts.js"></script>
 	</body>
 </html>

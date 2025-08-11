@@ -239,5 +239,6 @@
     color: var(--text-color);
     z-index: 10;
     box-sizing: border-box;
+	text-transform: uppercase;
 }
 

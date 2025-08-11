@@ -16,8 +16,9 @@ document.addEventListener('DOMContentLoaded', function() {
 			//Remuevo la clase de cortina, y agrego una nueva que es la que da el fondo al body
 			document.body.classList.remove('loading');
 			document.body.classList.add('loaded');
-			//Comienzo la carga de la página (textos y animaciones)
+
 			let lang = navigator.language.toLowerCase().startsWith('es') ? 'ES' : 'EN';
+
 			showLanguage(lang);
 		}
 	}
@@ -83,10 +84,18 @@ function toggleMusic(mute) {
 	
 	if (mute){
 		document.body.classList.remove('playing-music');	
-		bgm.pause().catch(()=>{});
+		try	{
+			bgm.pause();
+		} catch(e) {
+			console.warn("Error en la música: " + e);
+		}
 	}
 	else {
-		bgm.play().catch(()=>{});
+		try	{
+			bgm.play();
+		} catch(e) {
+			console.warn("Error en la música: " + e);
+		}
 		document.body.classList.add('playing-music');
 	}
 }
@@ -110,41 +119,20 @@ function showLanguage(recommended) {
 	}
 }
 
-function setLanguage(language, forceChange){
+function setLanguage(language){
 	let el = document.querySelector('.sections-wrapper');
 	el.classList.remove('sections-wrapper--lang');
 	
-	//Si no cambió el lenguaje no tiene sentido realizar el reemplazo
-	if(LANGUAGE != language || forceChange) { 
-		//Tomo los textos definidos en el archivo constants.js, referenciado antes de este archivo para ser válida la lectura de esta variable
-		let values = LANGUAGES[language];
-		
-		//Si no encuentra algo válido, por las dudas tomo el lenguaje inglés que sí o sí va a estar definido (este caso no debería darse, pero es una validación de contingencia, que nunca está de más)
-		if (!values) 
-			values = LANGUAGES.EN;
-		
-		//Reemplazo los valores en el HTML
-		values.forEach(item => {
-			//Cada item va a tener un selector de elemento para obtenerlo
-			const el = document.querySelector(item.selector);
-			
-			//Validación por si no encuentra el elemento, que realmente no debería ocurrir, pero nuevamente es una validación de contingencia :)
-			if (el) {
-				Object.entries(item.attributes).forEach(([attr, value]) => {
-					if (attr === 'innerText') 
-						el.innerText = value;
-					else if (attr === 'innerHTML') 
-						el.innerHTML = value;
-					else 
-						el.setAttribute(attr, value);
-			  });
-			}
-		});
-	}
+	if(CURRENT_LANG != language){
+		window.i18n.setLanguage(language);
+		window.i18n.applyI18n('general');
 
-	//Acá comienzo la animación ya con los textos cargados, vuelvo a la introducción para que tenga sentido todo el flujo de animación
-	if(!forceChange)
-		goBack();
+		let activeSection = document.querySelector('.container_section--active');
+		if(!activeSection)
+			animateIntro();
+		else
+			window.i18n.applyI18n(activeSection.id);
+	}
 }
 
 
@@ -243,7 +231,7 @@ function openSection(elementId) {
 	if (el)
 		el.classList.add('container_section--active');
 	
-	setLanguage(LANGUAGE, true);
+	window.i18n.applyI18n(elementId);
 }
 
 const svcID = 'service_ip3oywp', tmpID = 'template_elu0zn8';
