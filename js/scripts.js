@@ -232,6 +232,23 @@ function openSection(elementId) {
 		el.classList.add('container_section--active');
 	
 	window.i18n.applyI18n(elementId);
+
+	//Esconde todo para realizar la animación
+	let titleElems = el.querySelectorAll('.chatting');
+	if(titleElems) 
+		animateChatting(titleElems);
+}
+
+function animateChatting(elements, ix = 0){
+	if(elements.length <= ix)
+		return;
+
+	let el = elements[ix];
+
+	//Llamamos a la función que escribe caracter a caracter
+    animateAsTypewriter(el, el.innerText, 18, () => {
+		setTimeout(animateChatting(elements, ++ix), 1000);
+    });
 }
 
 const svcID = 'service_ip3oywp', tmpID = 'template_elu0zn8';
@@ -253,4 +270,26 @@ function onSubmit(event, form){
         alert("Ocurrió un error al enviar el mensaje 😥");
         console.error(error);
       });
+}
+
+async function onDownload(e){
+	e.preventDefault();
+
+	let href = e.currentTarget.getAttribute('download').split('.');
+
+	const response = await fetch(href[0] + '_' + CURRENT_LANG + '.' + href[1]);
+	const blob = await response.blob();
+	const url = URL.createObjectURL(blob);
+	
+	let filename = href[0].split('/');
+	filename = filename[filename.length - 1];
+
+	const a = document.createElement('a');
+	a.href = url;
+	a.download = filename + CURRENT_LANG + '.' + href[1];
+	document.body.appendChild(a);
+	a.click();
+	a.remove();
+	
+	URL.revokeObjectURL(url);
 }

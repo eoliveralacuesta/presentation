@@ -59,7 +59,7 @@
 						<button id="actions_contact" data-i18n="buttons.contact" onClick="openSection('contact')"></button>
 					</section>
 
-					<section id="objectives" class="container_section container_section--objectives" data-i18n-scope="objectives">
+					<section id="objectives" class="container_section container_section--objectives" data-i18n-scope="objectives" aria-labelledby="actions_objectives">
 						 <ul class="section_missions" data-i18n-scope="missions">
 							<li class="section_item" id="section_item--dev">
 								<img src="img/objectives/mission_dev.webp" data-i18n="dev.alt" />
@@ -120,12 +120,115 @@
 						</ol>
 					</section>
 
-					<section id="collection" class="container_section container_section-collection" data-i18n-scope="collection">
-					
+					<section id="collection" class="container_section container_section-collection" data-i18n-scope="collection" aria-labelledby="collection_title">
+						<div class="collection_buttons">
+							<button type="button"
+									data-i18n-aria="buttons.cv.aria"
+									download="assets/CV - Evelyn Olivera.pdf"
+									onClick="onDownload(event)">
+								<img src="img/collection/download.png" data-i18n-alt="buttons.cv.icon" />
+								<span data-i18n="buttons.cv.cta"></span>
+							</button>
+							
+							<button type="button"
+									data-i18n-aria="buttons.linkedin.aria"
+									onclick="window.open('https://www.linkedin.com/in/evelyn-olivera-sas/')">
+								<img src="img/collection/linkedin.png" data-i18n-alt="buttons.linkedin.icon" />
+								<span data-i18n="buttons.linkedin.cta"></span>
+							</button>
+						</div>
 
+						<h1 id="collection_title" class="chatting" data-i18n="title"></h1>
+
+						<article data-i18n-scope="lumbra">
+							<div class="collection_card" role="listitem" itemscope itemtype="https://schema.org/CreativeWork">
+								<a href="https://www.lumbrauruguay.com" data-i18n-aria="web.aria" itemprop="url">
+									<img src="img/collection/lumbra_web.gif"
+										data-i18n-alt="web.alt"
+										loading="lazy" decoding="async"
+										width="900" height="1600" itemprop="image">
+								</a>
+								
+								<h2 data-i18n="web.title"></h2>
+
+								<div class="collection_info">
+									<h3 itemprop="name" data-i18n="web.case"></h3>
+									<h4 data-i18n="web.role"></h4>
+									<p itemprop="description" data-i18n="web.description"></p>
+									
+									<a href="https://www.lumbrauruguay.com" data-i18n-aria="web.aria" data-i18n="web.cta" target="_blank" rel="noopener noreferrer"></a>
+								</div>
+							</div>
+
+							<div class="collection_card" role="listitem" itemscope itemtype="https://schema.org/CreativeWork">
+								<a href="https://www.lumbrauruguay.com" data-i18n-aria="socials.aria" itemprop="url">
+									<img src="img/collection/lumbra_rrss.gif"
+										data-i18n-alt="socials.alt"
+										loading="lazy" decoding="async"
+										width="900" height="1600" itemprop="image">
+								</a>
+								
+								<h2 data-i18n="socials.title"></h2>
+
+								<div class="collection_info">
+									<h3 itemprop="name" data-i18n="socials.case"></h3>
+									<h4 data-i18n="socials.role"></h4>
+									<p itemprop="description" data-i18n="socials.description"></p>
+									
+									<a href="https://www.instagram.com/lumbra_uruguay" data-i18n-aria="socials.aria" data-i18n="socials.cta" target="_blank" rel="noopener noreferrer"></a>
+								</div>
+							</div>
+						</article>
+
+						<h2 class="chatting" data-i18n="subtitle"></h2>
+
+						<article data-i18n-scope="esicilia">
+							<div class="collection_card" role="listitem" itemscope itemtype="https://schema.org/CreativeWork">
+								<h2 data-i18n="title"></h2>
+
+								<div class="collection_info">
+									<h4 itemprop="name" data-i18n="case"></h4>
+									<h4 data-i18n="role"></h4>
+									<p itemprop="description" data-i18n="description"></p>
+
+									<a href="https://www.instagram.com/espacio_sicilia" data-i18n-aria="aria" data-i18n="cta" target="_blank" rel="noopener noreferrer"></a>
+								</div>
+
+								<img class="small" src="img/collection/esicilia_flyer.webp"
+									data-i18n-alt="flyer"
+									loading="lazy" decoding="async"
+									width="620" height="840" itemprop="image">
+								
+								<img class="small" src="img/collection/esicilia_stories.gif"
+									data-i18n-alt="stories"
+									loading="lazy" decoding="async"
+									width="432" height="768" itemprop="image">
+							</div>
+						</article>
+
+						<article data-i18n-scope="aniredes">
+							<div class="collection_card" role="listitem" itemscope itemtype="https://schema.org/CreativeWork">
+								<h2 data-i18n="title"></h2>
+
+								<div class="collection_info">
+									<h4 itemprop="name" data-i18n="case"></h4>
+									<h4 data-i18n="role"></h4>
+									<p itemprop="description" data-i18n="description"></p>
+
+									<a href="https://www.instagram.com/aniredes.protecciones" data-i18n-aria="aria" data-i18n="cta" target="_blank" rel="noopener noreferrer"></a>
+								</div>
+
+								<img class="small" src="img/collection/aniredes_dif.gif"
+									data-i18n-alt="alt"
+									loading="lazy" decoding="async"
+									width="432" height="768" itemprop="image">
+							</div>
+						</article>
 					</section>
 
-					<section id="contact" class="container_section container_section-form" data-i18n-scope="contact">
+					<section id="contact" class="container_section container_section-form" data-i18n-scope="contact" aria-labelledby="contact_title">
+						<h1 id="contact_title" class="chatting" data-i18n="title"></h1>
+						
 						<form class="form"
 							  name="contact"
 							  onsubmit="onSubmit(event, this)">

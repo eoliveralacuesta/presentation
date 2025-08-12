@@ -70,9 +70,54 @@ const LANGUAGES = {
       }
     },
     collection: {
-      
+      buttons: {
+        cv: { cta: 'Descargar CV', aria: 'Descargar Currículum Vitae en idioma actual', icon: 'Ícono con flecha de descarga hacia abajo, estilo retro animado.' },
+        linkedin: { cta: 'LinkedIn', aria: 'Abrir perfil de LinkedIn en nueva pestaña', icon: 'Logotipo de LinkedIn, estilo retro animado.' }
+      },
+      title: '¿Así que te interesa ver algo de mi colección?',
+      lumbra: {
+        web: { 
+          cta: 'Ver logro',
+          aria: 'Abrir nueva pestaña con web de Lumbra',
+          alt: 'Animación corta de navegación mobile con interacciones en la web diseñada y desarrollada para Lumbra.',
+          title: 'LUMBRA',
+          case: 'web de presentación',
+          role: 'ROL: DISEÑO + DESARROLLO',
+          description: 'Landing liviana con catálogo y CTA a WhatsApp, respetando identidad de la marca con estilos rústicos y paleta de colores acorde.'
+        },
+        socials: {
+          cta: 'Ver logro',
+          aria: 'Abrir nueva pestaña con Instagram de Lumbra',
+          alt: 'Animación corta de navegación en feed de Instagram diseñado para Lumbra.',
+          title: 'LUMBRA',
+          case: 'marketing digital',
+          role: 'ROL: CONTENIDO + SOCIAL',
+          description: 'Diseño de feed + pack de historias con encuestas + catálogo pdf, foco en proceso artesanal y close-ups.'
+        }
+      },
+      subtitle: 'Estos fueron algunos de los logros más recientes, y los siguientes son proyectos solidarios, ¡pero no menos importantes!',
+      esicilia: {
+        title: 'ESPACIO SICILIA',
+        case: 'OBJETIVO: IDENTIFICAR MARCA, PALETA DE COLORES Y PÚBLICO',
+        role: 'ROL: DISEÑO + REALIZACIÓN',
+        description: 'Kit esencial de identidad. Construcción rápida de marca (colores y tipografía), flyer imprimible y stories con mensajes directos para familias.',
+        flyer: 'Folleto de mindfulness y yoga para niñas/os y jóvenes: ilustración suave y lista de beneficios con paleta de colores pastel.',
+        stories: 'Línea de historias animadas con colores pastel (celeste, rosa y amarillo), con ideas claras para el público adulto.',
+        cta: 'Ver Instagram',
+        aria: 'Abrir nueva pestaña con Instagram de Espacio Sicilia'
+      },
+      aniredes: {
+        title: 'ANIRedes',
+        case: 'OBJETIVO: IDENTIFICAR MARCA Y PÚBLICO PARA GENERAR CONTENIDO DE VENTAS Y RÁPIDA DIFUSIÓN',
+        role: 'ROL: DISEÑO + REALIZACIÓN',
+        description: 'Identidad express + difusión. Se definieron paleta, tipografía y tonos de forma ágil; sumando formas geométricas para énfasis en productos. Publicaciones listas con difusión orgánica + kit de productos para WhatsApp Business categorizados en nuevas colecciones.',
+        alt: 'Línea de publicaciones orientadas a grupos de difusión orgánica, con identidad de marca definida por el color azul.',
+        cta: 'Ver Instagram',
+        aria: 'Abrir nueva pestaña con Instagram de ANIRedes'
+      }
     },
     contact: {
+      title: '¿Tenés dudas o querés consultarme algo? ¡Escribime!',
       name: {
         icon: 'Ícono de persona, relacionado a nombre',
         placeholder: 'Tu nombre'

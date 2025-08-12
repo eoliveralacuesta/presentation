@@ -242,3 +242,48 @@
 	text-transform: uppercase;
 }
 
+.eol-body .sections-wrapper .container button img {
+    max-width: 25px;
+	margin-right: 8px;
+	image-rendering: pixelated;
+}
+
+.eol-body .sections-wrapper .container section.container_section .chatting {
+	color: var(--text-color);
+	font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.4;
+    box-shadow: 0 4px 14px 0 black;
+    background: var(--lightbrown-color);
+    border-radius: 9px;
+    padding: clamp(5px, 15vw, 10px);
+    margin: 0 0 35px;
+	position: relative;
+}
+
+.eol-body .sections-wrapper .container section.container_section .chatting::before,
+.eol-body .sections-wrapper .container section.container_section .chatting::after{
+  content: "";
+  position: absolute;
+  background: var(--lightbrown-color);
+  border: 1px solid black;
+  border-top: 0;
+  border-right: 0; 
+}
+
+/* escalón 1 */
+.eol-body .sections-wrapper .container section.container_section .chatting::before{
+  left: 10px;
+  bottom: -6px;
+  width: 10px;
+  height: 5px;
+}
+
+/* escalón 2 */
+.eol-body .sections-wrapper .container section.container_section .chatting::after{
+  left: 8px;
+  bottom: -11px;
+  width: 6px;
+  height: 5px;
+}

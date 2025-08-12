@@ -1,0 +1,108 @@
+/* BOTONES */
+.eol-body .sections-wrapper .container section.container_section.container_section-collection .collection_buttons {
+	display: flex;
+	gap: 10px;
+	justify-content: space-around;
+	align-items: center;
+    margin-bottom: 15px;
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section-collection .collection_buttons > button {
+	font-family: var(--pixel-font);
+	font-size: 14px;
+	font-variant: all-small-caps;
+	max-width: 200px;
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section-collection article {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section-collection article:not(:last-child) {
+    margin-bottom: 25px;
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section-collection article .collection_card {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+	background-color: var(--lightbrown-color);
+	box-shadow: 0 0 0 2px var(--brown-color);
+    border: 1px solid black;
+	position: relative;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section-collection article .collection_card img {
+    max-width: 100%;
+    height: auto;
+}
+.eol-body .sections-wrapper .container section.container_section.container_section-collection article .collection_card img.small {
+    width: clamp(250px, 70%, 400px);
+    margin-bottom: 15px;
+    margin-top: 10px;
+    border: 1px solid black;
+    box-shadow: 0 0 7px 0 var(--brown-color);
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section-collection article .collection_card > a {
+    animation: none;
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section-collection article .collection_card h2 {
+    font-family: 'Press Start 2P';
+    font-size: 18px;
+    font-weight: 400;
+    margin: 20px 0 10px;
+    text-transform: capitalize;
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section-collection article .collection_card .collection_info {
+    position: relative;
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section-collection article .collection_card .collection_info h3 {
+    margin: 0;
+    font-size: 21px;
+    font-variant: small-caps;
+    font-weight: 700;
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section-collection article .collection_card .collection_info h4 {
+    margin-bottom: 8px;
+    margin-top: 0;
+    font-size: 13px;
+    font-weight: 700;
+    font-variant: small-caps;
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section-collection article .collection_card .collection_info p {
+    margin: 0 0 35px;
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section-collection article .collection_card .collection_info a {
+    font-family: 'Press Start 2P';
+    font-size: 14px;
+    font-variant: all-small-caps;
+    color: var(--text-color);
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+}
+.eol-body .sections-wrapper .container section.container_section.container_section-collection article .collection_card .collection_info a:hover{
+    animation: pixel-jump .5s ease-in infinite;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+	.eol-body .sections-wrapper .container section.container_section.container_section-collection .collection_buttons,
+    .eol-body .sections-wrapper .container section.container_section.container_section-collection article {
+		flex-direction: column;
+	}
+}

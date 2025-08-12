@@ -81,16 +81,16 @@
 	max-width: 200px;
 }
 
-/* Errores en formulario */
-.eol-body .sections-wrapper .container section.container_section.container_section-form form .form_input--group > input:invalid,
-.eol-body .sections-wrapper .container section.container_section.container_section-form form textarea:invalid {
-	box-shadow: inset 0 0 0 2px red;
-	background-color: #ffe5e5;
-}
-
 /* Responsive botones */
 @media (max-width: 500px) {
 	.eol-body .sections-wrapper .container section.container_section.container_section-form form > div.form_button {
 		flex-direction: column;
 	}
+}
+
+/* Errores en formulario */
+.eol-body .sections-wrapper .container section.container_section.container_section-form form .form_input--group > input:invalid,
+.eol-body .sections-wrapper .container section.container_section.container_section-form form textarea:invalid {
+	box-shadow: inset 0 0 0 2px red;
+	background-color: #ffe5e5;
 }
