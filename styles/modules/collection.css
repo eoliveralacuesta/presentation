@@ -46,7 +46,7 @@
 .eol-body .sections-wrapper .container section.container_section.container_section-collection article .collection_card img.small {
     width: clamp(250px, 70%, 400px);
     margin-bottom: 15px;
-    margin-top: 10px;
+    margin-top: 15px;
     border: 1px solid black;
     box-shadow: 0 0 7px 0 var(--brown-color);
 }
@@ -65,6 +65,7 @@
 
 .eol-body .sections-wrapper .container section.container_section.container_section-collection article .collection_card .collection_info {
     position: relative;
+    margin-bottom: 10px;
 }
 
 .eol-body .sections-wrapper .container section.container_section.container_section-collection article .collection_card .collection_info h3 {
@@ -83,7 +84,7 @@
 }
 
 .eol-body .sections-wrapper .container section.container_section.container_section-collection article .collection_card .collection_info p {
-    margin: 0 0 35px;
+    margin: 0 0 20px;
 }
 
 .eol-body .sections-wrapper .container section.container_section.container_section-collection article .collection_card .collection_info a {
@@ -91,11 +92,21 @@
     font-size: 14px;
     font-variant: all-small-caps;
     color: var(--text-color);
-    position: absolute;
-    bottom: 10px;
-    left: 5px;
+    white-space: nowrap;
+    position: relative;
+    padding-left: 22px;
 }
-.eol-body .sections-wrapper .container section.container_section.container_section-collection article .collection_card .collection_info a:hover{
+
+.eol-body .sections-wrapper .container section.container_section.container_section-collection article .collection_card .collection_info a img {
+    width: auto;
+    height: 14px;
+    margin-right: 8px;
+    left: 0;
+    top: 0px;
+    position: absolute;
+}
+
+.eol-body .sections-wrapper .container section.container_section.container_section-collection article .collection_card .collection_info a:hover img {
     animation: pixel-jump .5s ease-in infinite;
 }
 

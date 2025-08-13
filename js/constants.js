@@ -83,7 +83,7 @@ const LANGUAGES = {
           title: 'LUMBRA',
           case: 'web de presentación',
           role: 'ROL: DISEÑO + DESARROLLO',
-          description: 'Landing liviana con catálogo y CTA a WhatsApp, respetando identidad de la marca con estilos rústicos y paleta de colores acorde.'
+          description: 'Landing liviana con catálogo y CTA a WhatsApp, respetando identidad de la marca con estilos rústicos y paleta de colores acorde.',
         },
         socials: {
           cta: 'Ver logro',
@@ -93,10 +93,12 @@ const LANGUAGES = {
           case: 'marketing digital',
           role: 'ROL: CONTENIDO + SOCIAL',
           description: 'Diseño de feed + pack de historias con encuestas + catálogo pdf, foco en proceso artesanal y close-ups.'
-        }
+        },
+        star: 'Ícono de estrella amarilla en estilo retro animado.'
       },
       subtitle: 'Estos fueron algunos de los logros más recientes, y los siguientes son proyectos solidarios, ¡pero no menos importantes!',
       esicilia: {
+        heart: 'Ícono de corazón rojo en estilo retro animado.',
         title: 'ESPACIO SICILIA',
         case: 'OBJETIVO: IDENTIFICAR MARCA, PALETA DE COLORES Y PÚBLICO',
         role: 'ROL: DISEÑO + REALIZACIÓN',
@@ -107,6 +109,7 @@ const LANGUAGES = {
         aria: 'Abrir nueva pestaña con Instagram de Espacio Sicilia'
       },
       aniredes: {
+        heart: 'Ícono de corazón rojo en estilo retro animado.',
         title: 'ANIRedes',
         case: 'OBJETIVO: IDENTIFICAR MARCA Y PÚBLICO PARA GENERAR CONTENIDO DE VENTAS Y RÁPIDA DIFUSIÓN',
         role: 'ROL: DISEÑO + REALIZACIÓN',
