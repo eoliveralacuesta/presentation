@@ -42,6 +42,8 @@
 .eol-body .sections-wrapper .container section.container_section.container_section-collection article .collection_card img {
     max-width: 100%;
     height: auto;
+}
+.eol-body .sections-wrapper .container section.container_section.container_section-collection article .collection_card img.small {
     width: clamp(250px, 70%, 400px);
     margin-bottom: 15px;
     margin-top: 15px;
