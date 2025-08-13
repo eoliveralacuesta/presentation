@@ -247,7 +247,7 @@ function animateChatting(elements, ix = 0){
 
 	//Llamamos a la función que escribe caracter a caracter
     animateAsTypewriter(el, el.innerText, 18, () => {
-		setTimeout(animateChatting(elements, ++ix), 1000);
+		setTimeout(animateChatting(elements, ++ix), 2000);
     });
 }
 
